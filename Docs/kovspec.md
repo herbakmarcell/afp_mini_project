@@ -11,3 +11,6 @@ egy pontok alapján kalkulált átlag. Ezt azonban nem tudjuk az online térben 
 A projekt célja nem más, mint hogy a hallgatók meg tudják tekinteni más hallgatók véleményét egy adott oktatóra vonatkozóan, az oldalnak
 azonban könnyen kezelhetőnek és átláthatónak kell lennie. Az alkalmazás funkciói: regisztráció, bejelentkezés, oktatók értékelése, valamint 
 véleményezése.
+
+## 4. Jelenlegi üzleti folyamatok modellje
+Jelenleg a hallgatók az általuk ismert hallgatóktól tudnak véleményt kérni bizonyos oktatókról, azonban friss egyetemistaként ez elég korlátozott tud lenni. Így nem biztos hogy a reális következtetést vonják le a véleményekből.
