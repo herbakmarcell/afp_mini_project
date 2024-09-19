@@ -14,3 +14,11 @@ véleményezése.
 
 ## 4. Jelenlegi üzleti folyamatok modellje
 Jelenleg a hallgatók az általuk ismert hallgatóktól tudnak véleményt kérni bizonyos oktatókról, azonban friss egyetemistaként ez elég korlátozott tud lenni. Így nem biztos hogy a reális következtetést vonják le a véleményekből.
+
+## 5. Igényelt üzleti folyamatok modellje
+Egy olyan weboldal, amely átlátható, alkalmas felületet nyújt a hallgatóknak az oktatók véleményezésére, értékelésére.
+Az alapmodellre épülő oldalunk a következőket tartalmazza:
+-  Bejelentkezés
+-  Regisztráció
+-  Oktatók megjelenítése
+-  Oktatók értékelése, véleményezése
