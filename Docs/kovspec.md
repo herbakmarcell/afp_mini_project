@@ -13,7 +13,8 @@ azonban könnyen kezelhetőnek és átláthatónak kell lennie. Az alkalmazás f
 véleményezése.
 
 ## 4. Jelenlegi üzleti folyamatok modellje
-Jelenleg a hallgatók az általuk ismert hallgatóktól tudnak véleményt kérni bizonyos oktatókról, azonban friss egyetemistaként ez elég korlátozott tud lenni. Így nem biztos hogy a reális következtetést vonják le a véleményekből.
+Jelenleg a hallgatók az általuk ismert hallgatóktól tudnak véleményt kérni bizonyos oktatókról, azonban friss egyetemistaként ez elég korlátozott tud lenni. Így nem biztos hogy a reális következtetést vonják le a véleményekből. Meg tudják nézni az oktatókat a MarkMyProfessor oldalon, azonban ott nem szerepel minden tanár. A weblap lefed bizonyos tanárokat, azonban új tanárt a hallgatóknak kell
+felvenniük az oldalra, nem szerepel az összes oktató alapértelmezetten a rendszerben.
 
 ## 5. Igényelt üzleti folyamatok modellje
 Egy olyan weboldal, amely átlátható, alkalmas felületet nyújt a hallgatóknak az oktatók véleményezésére, értékelésére.
