@@ -22,3 +22,14 @@ Az alapmodellre épülő oldalunk a következőket tartalmazza:
 -  Regisztráció
 -  Oktatók megjelenítése
 -  Oktatók értékelése, véleményezése
+
+## 6. Követelménylista
+|  ID  |  Modul  |  Név  |  Kifejtés  |
+| :--: | :-----: | :---- | :--------- |
+| K1   | Szerver | Adatbázis | Adatok tárolása |
+| K2   | Felület | Regisztráció | Felhasználó regisztrációja |
+| K3   | Felület | Bejelentkezés | Felhasználó bejelentkezése |
+| K4   | Felület | Oktatók | Oktatók megjelenítése |
+| K5   | Felület | Információ | Információk az oktatókról |
+| K6   | Felület | Értékelés | Értékelés az oktatókra |
+| K7   | Felület | Vélemény  | Vélemények az oktatókról | 
