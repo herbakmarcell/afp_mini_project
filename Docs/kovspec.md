@@ -34,3 +34,7 @@ Az alapmodellre épülő oldalunk a következőket tartalmazza:
 | K5   | Felület | Információ | Információk az oktatókról |
 | K6   | Felület | Értékelés | Értékelés az oktatókra |
 | K7   | Felület | Vélemény  | Vélemények az oktatókról | 
+
+## 7. Fogalomtár
+-  **Tárgyfelvétel:** Az új félév kezdete előtt a tanegységek Neptunban történő felvétele.
+-  **Kurzus:** Az a keret, amelyben a hallgatók meghatározott rend (előadás, gyakorlat) szerint gyarapítják tudásukat, és arról számot is adnak.
