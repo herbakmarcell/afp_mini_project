@@ -5,4 +5,9 @@ legmegfelelőbb oktatóhoz tudják felvenni a szükséges tárgyakat, valamint k
 
 ## 2.Jelenlegi helyzet
 Jelenleg az oktatókról nem tudunk véleményeket szerezni olyan könnyen, valamint sokszor a személyes tapasztalat többet jelent, mint 
-egy pontok alapján kalkulált átlag. Ezt azonban nem tudjuk az online térben teljes mértékben elérni, ami nehezíti a döntést a kurzus választásakor, ezt szeretné a megrendelő megkönnyíteni. 
+egy pontok alapján kalkulált átlag. Ezt azonban nem tudjuk az online térben teljes mértékben elérni, ami nehezíti a döntést a kurzusok választásakor, ezt szeretné a megrendelő megkönnyíteni. 
+
+## 3. Vágyálom rendszer
+A projekt célja nem más, mint hogy a hallgatók meg tudják tekinteni más hallgatók véleményét egy adott oktatóra vonatkozóan, az oldalnak
+azonban könnyen kezelhetőnek és átláthatónak kell lennie. Az alkalmazás funkciói: regisztráció, bejelentkezés, oktatók értékelése, valamint 
+véleményezése.
