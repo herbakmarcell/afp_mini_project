@@ -61,8 +61,17 @@ A weboldal meglátogatása után azonnal használható az alkalmazás. A felhasz
 ### Nem funkcionális
 - Az adatbázisból az adatok megfelelően legyenek megjelenítve és lekérdezve
 - Gyors és folyamatos szerver és kliens kommunikáció
+
+## 5. Funkcionális terv
+
 ### 5.1 Rendszerszereplők
 Az oldal a felhasználó számítógépén érhető el.
+
+### 5.2 Menü-hierarchia
+  - Navigációs sáv: Itt navigálhatunk a különféle oldalak között.
+  - Bejelentkező, Regisztráció oldal: Értékelés és vélemény írásához szükséges egy felhasználói profil.
+  - Főoldal: Az adatbázisban szereplő tanárok megjelenítése
+  - Mellékoldal: Miután a főoldalon kiválasztottuk melyik tanár profilját szeretnénk megteginteni itt megjelennek az adott tanár adatai, az eddigi értékeléseinek összesítése és a róla alkotott vélemények komment formában. Valamint ezen az oldalon tud maga a felhasználó is értékelni és véleményezni.
 
 ## 6. Fizikai környezet
 ### Hardver környezet
