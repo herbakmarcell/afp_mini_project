@@ -12,3 +12,14 @@ Célunk egy olyan értékelő- és véleményező oldal kialakítása, amely át
   -  Györkis Tamás
 ### 3.1 Üzleti szereplők
 Az oldalon regisztrálni kell a felhasználónak ha értékelést vagy kommentet szeretne írni az oktatóról. A weboldal meglátogatásához nincsen szükség semmilyen szoftver letöltéséhez vagy megvételéhez.
+### 4. Követelmények
+## Követelménytáblázat
+|  ID  |  Modul  |  Név  |  Kifejtés  |
+| :--: | :-----: | :---- | :--------- |
+| K1   | Szerver | Adatbázis | Adatok tárolása |
+| K2   | Felület | Regisztráció | Felhasználó regisztrációja |
+| K3   | Felület | Bejelentkezés | Felhasználó bejelentkezése |
+| K4   | Felület | Oktatók | Oktatók megjelenítése |
+| K5   | Felület | Információ | Információk az oktatókról |
+| K6   | Felület | Értékelés | Értékelés az oktatókra |
+| K7   | Felület | Vélemény  | Vélemények az oktatókról | 
