@@ -10,6 +10,13 @@ Célunk egy olyan értékelő- és véleményező oldal kialakítása, amely át
   -   Herbák Marcell 
 * Üzleti szereplő:
   -  Györkis Tamás
+### 2.2 Projectmunkások és felelősségek
+* Frontend:
+  - Szkleván Richárd
+  - Szabó Richárd
+* Backend:
+  - Seres Szabolcs
+  - Vastag Demeter
 
 ### 2.3 Ütemterv
 |Funkció                  | Feladat                   | Prioritás | Becslés (nap) | Aktuális becslés (nap) | Eltelt idő (nap) | Határidő (nap) |
@@ -26,7 +33,7 @@ Célunk egy olyan értékelő- és véleményező oldal kialakítása, amely át
 ### 3.1 Üzleti szereplők
 Az oldalon regisztrálni kell a felhasználónak ha értékelést vagy kommentet szeretne írni az oktatóról. A weboldal meglátogatásához nincsen szükség semmilyen szoftver letöltéséhez vagy megvételéhez.
 ### 4. Követelmények
-## Követelménytáblázat
+### Követelménytáblázat
 |  ID  |  Modul  |  Név  |  Kifejtés  |
 | :--: | :-----: | :---- | :--------- |
 | K1   | Szerver | Adatbázis | Adatok tárolása |
@@ -37,13 +44,13 @@ Az oldalon regisztrálni kell a felhasználónak ha értékelést vagy kommentet
 | K6   | Felület | Értékelés | Értékelés az oktatókra |
 | K7   | Felület | Vélemény  | Vélemények az oktatókról | 
 
-## Funkcionális
+### Funkcionális
 - A regisztráció során adatok eltárolása az adatbázisba
 - Bejelentkeztetés során az adatbázisban lévő felhasználó adatainak pontos összehasonlítása a felhasználó által megadottakkal
 - Az oktatók adatainak betöltése a főoldalra
 - A tanárok értékelésének helyes kiszámítása
 - A kommentszekció helyes működése
 
-## Nem funkcionális
+### Nem funkcionális
 - Az adatbázisból az adatok megfelelően legyenek megjelenítve és lekérdezve
 - Gyors és folyamatos szerver és kliens kommunikáció
