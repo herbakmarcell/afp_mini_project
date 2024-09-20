@@ -83,7 +83,8 @@ Visual Studio Code.
 
 ## 7. Architechtúrális terv
 A program képes futni bármely böngészőben egy internetelérésre alkalmas eszközön. Az alkalmazás futtatásához tehát szükség lesz internetkapcsolatra és egy háttér adatbázisra az adatok tárolására és kezelésére.
-
+## 8. Adatbázis terv
+(../Img/AdatbázisTerv.png)
 ## 9. Implementációs terv
    * Felhasználói felület: Webes alkalmazás
    * A program egy böngészőablakban fut, az elrendezést HTML és CSS segítségével oldjuk meg. PHP-val kérdezünk le és módosítunk adatokat az adatbázisban. Az adatbázist pedig a MySQL adatbázis-kezelő rendszerben tároljuk, ezt phpMyAdmin segítségével kezeljük.
