@@ -23,3 +23,14 @@ Az oldalon regisztrálni kell a felhasználónak ha értékelést vagy kommentet
 | K5   | Felület | Információ | Információk az oktatókról |
 | K6   | Felület | Értékelés | Értékelés az oktatókra |
 | K7   | Felület | Vélemény  | Vélemények az oktatókról | 
+
+## Funkcionális
+- A regisztráció során adatok eltárolása az adatbázisba
+- Bejelentkeztetés során az adatbázisban lévő felhasználó adatainak pontos összehasonlítása a felhasználó által megadottakkal
+- Az oktatók adatainak betöltése a főoldalra
+- A tanárok értékelésének helyes kiszámítása
+- A kommentszekció helyes működése
+
+## Nem funkcionális
+- Az adatbázisból az adatok megfelelően legyenek megjelenítve és lekérdezve
+- Gyors és folyamatos szerver és kliens kommunikáció
