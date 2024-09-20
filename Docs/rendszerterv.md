@@ -94,3 +94,8 @@ hogy miket teszteltünk a programban is nem csak a hibás részeket.
 ## 11. Telepítési terv
    * Fizikai telepítési terv: Az alkalmazás üzemeltetéséhez szükséges egy távoli webszerver és adatbázis, ezeket a szolgáltató üzemelteti. A felhasználónak csupán internetkapcsolatra és egy modern böngészőre van szüksége.
    * Szoftver telepítési terv: Az alkalmazást nem kell külön telepíteni, bármely böngészőben elfut egy internetelérésre alkalmas eszközön.
+## 12. Karbantartási terv
+Miután eljuttatjuk a megrendelőnek az alkalmazást nem fejezzük be a fejlesztését mert egy jó szoftver életciklusa nem ér véget a lefejlesztés végével. 
+Mindig lehetnek újabb funkciók, új igények amelyeket le kell fejleszteni vagy
+karbantartani az alkalmazást.
+
