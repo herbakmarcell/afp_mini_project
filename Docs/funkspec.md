@@ -21,3 +21,15 @@ Egy olyan weboldal, amely átlátható, alkalmas felületet nyújt a hallgatókn
  - Regisztráció
  - Oktatók megjelenítése
  - Oktatók értékelése, véleményezése
+
+## 5. Követelménylista
+
+| ID | Modul | Név | Kifejtés |
+| :---: | --- | --- | --- |
+| K1  | Szerver | Adatbázis  | Adatok tárolása |
+| K2  | Felület | Regisztráció  | Felhasználó regisztrációja |
+| K3  | Felület | Bejelentkezés  | Felhasználó bejelentkezése |
+| K4  | Felület | Oktatók  | Oktatók megjelenítése |
+| K5  | Felület | Információ | Információk az oktatókról |
+| K6  | Felület | Értékelés  | Értékelés az oktatókra |
+| K7  | Felület | Vélemény | Vélemények az oktatókról |
