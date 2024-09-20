@@ -54,3 +54,5 @@ Az oldalon regisztrálni kell a felhasználónak ha értékelést vagy kommentet
 ### Nem funkcionális
 - Az adatbázisból az adatok megfelelően legyenek megjelenítve és lekérdezve
 - Gyors és folyamatos szerver és kliens kommunikáció
+### 5.1 Rendszerszereplők
+Az oldal a felhasználó számítógépén érhető el.
