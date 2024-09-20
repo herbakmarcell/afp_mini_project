@@ -10,4 +10,5 @@ Célunk egy olyan értékelő- és véleményező oldal kialakítása, amely át
   -   Herbák Marcell 
 * Üzleti szereplő:
   -  Györkis Tamás
-  
+### 3.1 Üzleti szereplők
+Az oldalon regisztrálni kell a felhasználónak ha értékelést vagy kommentet szeretne írni az oktatóról. A weboldal meglátogatásához nincsen szükség semmilyen szoftver letöltéséhez vagy megvételéhez.
