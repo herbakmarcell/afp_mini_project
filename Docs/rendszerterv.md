@@ -87,3 +87,7 @@ A program képes futni bármely böngészőben egy internetelérésre alkalmas e
 ## 9. Implementációs terv
    * Felhasználói felület: Webes alkalmazás
    * A program egy böngészőablakban fut, az elrendezést HTML és CSS segítségével oldjuk meg. PHP-val kérdezünk le és módosítunk adatokat az adatbázisban. Az adatbázist pedig a MySQL adatbázis-kezelő rendszerben tároljuk, ezt phpMyAdmin segítségével kezeljük.
+
+## 11. Telepítési terv
+   * Fizikai telepítési terv: Az alkalmazás üzemeltetéséhez szükséges egy távoli webszerver és adatbázis, ezeket a szolgáltató üzemelteti. A felhasználónak csupán internetkapcsolatra és egy modern böngészőre van szüksége.
+   * Szoftver telepítési terv: Az alkalmazást nem kell külön telepíteni, bármely böngészőben elfut egy internetelérésre alkalmas eszközön.
