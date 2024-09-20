@@ -8,3 +8,7 @@ a hallgatók hasznos információkat találnak az egyetem oktatóiról.
 ## 2. Vágyálom rendszer
 
 A projekt célja az, hogy a hallgatók információkat szerezzenek adott oktatókról más hallgatók véleménye, és tapasztalati alapján. Az oldalnak átláthatónak és könnyen navigálhatónak kell lennie. Ezzel is könnyítve az új tanulók dolgát. Az alkalmazás funkciói: regisztráció, bejelentkezés, oktatók értékelése, valamint véleményezése.
+
+## 3. Jelenlegi üzleti folyamatok modellje
+
+Jelenleg a hallgatók az általuk ismert hallgatóktól tudnak véleményt kérni bizonyos oktatókról, azonban ha valaki úgy érkezik meg ebbe a közegbe, hogy nincs ismerőse, akkor ez elég korlátozott tud lenni. Így nem biztos, hogy a számukra megfelelő döntést tudják hozni, és rosszul választják meg az oktatókat. Meg tudják nézni a tanárokat a MarkMyProfessor oldalon, azonban ott nem szerepel minden tanár. A weblap bizonyos számban fedi le őket. Új tanárt a hallgatóknak kell felvenniük, alapértelmezetten nem szerepel az összes oktató a rendszerben.
