@@ -10,6 +10,19 @@ Célunk egy olyan értékelő- és véleményező oldal kialakítása, amely át
   -   Herbák Marcell 
 * Üzleti szereplő:
   -  Györkis Tamás
+
+### 2.3 Ütemterv
+|Funkció                  | Feladat                   | Prioritás | Becslés (nap) | Aktuális becslés (nap) | Eltelt idő (nap) | Határidő (nap) |
+|-------------------------|---------------------------|-----------|---------------|------------------------|------------------|---------------------|
+|Követelmény specifikáció |Megírás                    |         1 |             2 |                      2 |                1 |                   2 |
+|Funkcionális specifikáció|Megírás                    |         1 |             2 |                      2 |                0 |                   2 |
+|Rendszerterv             |Megírás                    |         1 |             2 |                      2 |                0 |                   2 |
+|Program                  |Vizuális tervek elkészítése|         2 |             1 |                      0 |                0 |                   1 |
+|Program                  |Prototípus elkészítése     |         3 |             3 |                      0 |                0 |                   3 |
+|Program                  |Alapfunkciók elkészítése   |         3 |             5 |                      0 |                0 |                   5 |
+|Program                  |Extra funkciók elkészítése |         3 |             3 |                      0 |                0 |                   3 |
+|Program                  |Tesztelés                  |         4 |             2 |                      0 |                0 |                   2 |
+
 ### 3.1 Üzleti szereplők
 Az oldalon regisztrálni kell a felhasználónak ha értékelést vagy kommentet szeretne írni az oktatóról. A weboldal meglátogatásához nincsen szükség semmilyen szoftver letöltéséhez vagy megvételéhez.
 ### 4. Követelmények
