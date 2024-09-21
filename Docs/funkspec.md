@@ -69,3 +69,8 @@ A felhasználó a főoldalon láthatja az összes tanárt kártyák formájában
  | K5  | Hibamentes működés, letisztult megjelenités| Minden tanárnak lesz egy külön oldal, ahol több dolgot is olvasthatnak majd a felhasználók. |
  | K6  | Hibamentes működés, letisztult megjelenítés | Bejelentkezést követően értékelést is lehet küldeni az oldalra. Az értékelés az adatbázisban tárolódik el az adott felhasználó és az adott oktató kapcsolatában. |
  | K7  | Hibamentes működés, letisztult megjelenítés | Bejelentkezést követően véleményt is lehet küldeni az oldalra. A vélemény az adatbázisban tárolódik el az adott felhasználó és az adott oktató kapcsolatában. |
+
+## 11. Fogalomszótár
+
+* **Normálforma:** A harmadik normálforma (3NF) egy adatbázisséma, amely kapcsolódik a relációs adatbázisokat használó normalizáló elvekhez, amely csökkentse a párhuzamos adatokat, elkerülje adatok anomáliáit és hibáit, biztosítják a hivatkozási integritást és egyszerűsítsék az adatkezelést.
+*  **Hallgató és oktató kapcsolata:** Mivel egy hallgató több oktatót is értékelhet, véleményezhet és egy oktatót több hallgató értékelhet kapcsolótáblát kell használni az adatbázisban elkerülve a több-több kapcsolatot. Hiszen azt közvetlenül nem lehet tárolni a relációs adatbázisokban, mert az megsértené a normalizációs elveket. 
