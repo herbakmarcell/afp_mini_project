@@ -37,3 +37,15 @@ Egy olyan weboldal, amely átlátható, alkalmas felületet nyújt a hallgatókn
 ## 6. Használati esetek
 
 A felhasználó a főoldalon láthatja az összes tanárt kártyák formájában megjelenítve. Külön ki tud választani egy oktatót a kártyán lévő gombra kattintva, hogy ha bővebb információt szeretne kapni. Ezt követően a főoldal elnavigálja a hallgatót egy olyan oldalra, ahol már csak az adott tanár jelenik meg. Ezen az oldalon lehet véleményt írni vagy értékelni. Valamint ezen a felületen tudja elolvasni mások véleményét és látja, hogy milyen értékeléseket kapott az adott oktató.  
+
+## 7. Megfeleltetés, hogyan fedik le a használati eseteket a követelményeket
+
+|ID|Leírás           |
+|-------------------------|---------------------------|
+|K1|Az oktatók és a bejelentkezett felhasználók adatait adatbázisban tároljuk. Az oktatókról eltároljuk a nevet, a szakot, hogy mit tanít, milyen értékeléssel rendelkezik és, hogy milyen véleményeket írtak róla. A felhasználókról a nevet, az e-mail címet és a jelszót tároljuk el.|          
+|K2|A felhasználónak regisztrálnia kell ha véleményt szeretne írni, vagy ha értékelni szeretne egy adott oktatót. Név, e-mail cím és jelszó megadásával teheti meg ezt.|
+|K3|A felhasználó a regisztrált e-mail címet és jelszót használva tud bejelentkezni az oldalra. Ezután lesz elérhető számára az értékelés és a vélemény írás.|
+|K4|A főoldalon jelennek meg az oktatók kártyás elrendezésben. Minden oktatónak lesz egy külön oldala, ahol több információt jelenítünk meg a hallgatók számára.|
+|K5|Minden oktatónak lesz egy külön oldala, ahol több információt jelenítünk meg a hallgatók számára. Megjelenítjük, hogy milyen szakon tanít, milyen értékeléssel rendelkezik és azt, hogy más hallgatók milyen véleménnyel vannak az adott oktatóról. |
+|K6|A felhasználó bejelentkezés követően jogosult lesz arra, hogy értékelje a tanárokat.|
+|K7|A felhasználó bejelentkezés követően jogosult lesz arra, hogy véleményezze a tanárokat.|
