@@ -49,3 +49,23 @@ A felhasználó a főoldalon láthatja az összes tanárt kártyák formájában
 |K5|Minden oktatónak lesz egy külön oldala, ahol több információt jelenítünk meg a hallgatók számára. Megjelenítjük, hogy milyen szakon tanít, milyen értékeléssel rendelkezik és azt, hogy más hallgatók milyen véleménnyel vannak az adott oktatóról. |
 |K6|A felhasználó bejelentkezés követően jogosult lesz arra, hogy értékelje a tanárokat.|
 |K7|A felhasználó bejelentkezés követően jogosult lesz arra, hogy véleményezze a tanárokat.|
+
+## 8. Képernyő képek
+
+
+
+## 9. Forgatókönyv
+
+
+
+## 10. Funkció - követelmény megfeleltetése
+
+ | Id | Követelmény | Funkció |
+ | :---: | --- | --- |
+ | K1  | Hibamentes működés| Az adatbázis a megfelelő normálformában van. |
+ | K2  | Hibamentes működés, letisztult megjelenités| A felhasználók ellenőrzött módon tudnak regisztrálni az oldalra. Adott feltételeknek megfelelő e-mail címet és jelszót adnak meg. Megfelelő módon kerülnek tárolásra a megadott adatok az adatbázisban. |
+ | K3  | Hibamentes működés, letisztult megjelenités| A regisztrált e-mail cím és a hozzá tartozó jelszó megadását követően az oldal bejelentkezteti a hallgatót a felületre. |
+ | K4  | Hibamentes működés, letisztult megjelenités| Tisztán, elkülöníthetően és rendezett módon jelennek meg az oktatók a főoldalon. |
+ | K5  | Hibamentes működés, letisztult megjelenités| Minden tanárnak lesz egy külön oldal, ahol több dolgot is olvasthatnak majd a felhasználók. |
+ | K6  | Hibamentes működés, letisztult megjelenítés | Bejelentkezést követően értékelést is lehet küldeni az oldalra. Az értékelés az adatbázisban tárolódik el az adott felhasználó és az adott oktató kapcsolatában. |
+ | K7  | Hibamentes működés, letisztult megjelenítés | Bejelentkezést követően véleményt is lehet küldeni az oldalra. A vélemény az adatbázisban tárolódik el az adott felhasználó és az adott oktató kapcsolatában. |
