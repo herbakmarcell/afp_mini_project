@@ -33,3 +33,7 @@ Egy olyan weboldal, amely átlátható, alkalmas felületet nyújt a hallgatókn
 | K5  | Felület | Információ | Információk az oktatókról |
 | K6  | Felület | Értékelés  | Értékelés az oktatókra |
 | K7  | Felület | Vélemény | Vélemények az oktatókról |
+
+## 6. Használati esetek
+
+A felhasználó a főoldalon láthatja az összes tanárt kártyák formájában megjelenítve. Külön ki tud választani egy oktatót a kártyán lévő gombra kattintva, hogy ha bővebb információt szeretne kapni. Ezt követően a főoldal elnavigálja a hallgatót egy olyan oldalra, ahol már csak az adott tanár jelenik meg. Ezen az oldalon lehet véleményt írni vagy értékelni. Valamint ezen a felületen tudja elolvasni mások véleményét és látja, hogy milyen értékeléseket kapott az adott oktató.  
