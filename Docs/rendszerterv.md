@@ -87,7 +87,7 @@ Visual Studio Code.
 ### Adatbázis rendszer
    - MySQL alapú adatbázis rendszer.
 ### A program elérése, kezelése
-   - A program működéséhez szükséges technológiák: HTML, CSS, PHP. A fejlesztési és helyi futtatási környezetben XAMPP használható.
+   - A program működéséhez szükséges technológiák: HTML, CSS, JavaScript, PHP. A fejlesztési és helyi futtatási környezetben XAMPP használható.
    - Éles környezetben egy szervergépre van szükség, ahol az Apache webszerver, PHP és MySQL megfelelően konfigurálva vannak.
 
 ## 8. Adatbázis terv
@@ -95,12 +95,25 @@ Visual Studio Code.
 ## 9. Implementációs terv
    * Felhasználói felület: Webes alkalmazás
    * A program egy böngészőablakban fut, az elrendezést HTML és CSS segítségével oldjuk meg. PHP-val kérdezünk le és módosítunk adatokat az adatbázisban. Az adatbázist pedig a MySQL adatbázis-kezelő rendszerben tároljuk, ezt phpMyAdmin segítségével kezeljük.
+
 ## 10. Tesztterv
 A szoftvert/weboldalt teszteljük még mielőtt eljuttatnánk a megrendelőhöz. Tesztnaplót vezetünk amely segítségével tudjuk követni, hogy hol és milyen hibákat tartalmaz a program. A tesztnaplóba feltüntetjük azt is
 hogy miket teszteltünk a programban is nem csak a hibás részeket.
+
 ## 11. Telepítési terv
-   * Fizikai telepítési terv: Az alkalmazás üzemeltetéséhez szükséges egy távoli webszerver és adatbázis, ezeket a szolgáltató üzemelteti. A felhasználónak csupán internetkapcsolatra és egy modern böngészőre van szüksége.
-   * Szoftver telepítési terv: Az alkalmazást nem kell külön telepíteni, bármely böngészőben elfut egy internetelérésre alkalmas eszközön.
+   ### Fizikai telepítési terv
+   * A felhasználónak szüksége van egy működő számítógépre vagy mobil eszközre, amely rendelkezik internetkapcsolattal és modern böngészővel (pl. Chrome, Firefox).
+   * A futtatásához szükség van egy távoli webszerverre, amelyen Apache webszerver és MySQL adatbázis működik.
+   * A webszervernek folyamatosan csatlakoznia kell az internethez, hogy a felhasználók bármikor elérhessék az alkalmazást.
+
+### Szoftver telepítési terv
+   * Távoli webszerver esetén nem kell külön telepíteni a felhasználók eszközeire, mivel az egy webes alkalmazás, amely böngészőben futtatható.
+   * Fejlesztési és helyi környezetben a következő eszközökre van szükség:
+     - XAMPP telepítése, amely tartalmazza az Apache webszervert és a MySQL adatbázist.
+     - A backend és frontend fejlesztéséhez szükséges a Visual Studio Code
+     - A szükséges szoftvercsomagok közé tartozik a PHP, MySQL és a webfejlesztési technológiák (HTML, CSS, JavaScript).
+   * Miután az összes szükséges komponenst telepítették és konfigurálták, a webes alkalmazás böngészőn keresztül elérhető és futtatható.
+
 ## 12. Karbantartási terv
 Miután eljuttatjuk a megrendelőnek az alkalmazást nem fejezzük be a fejlesztését mert egy jó szoftver életciklusa nem ér véget a lefejlesztés végével. 
 Mindig lehetnek újabb funkciók, új igények amelyeket le kell fejleszteni vagy
