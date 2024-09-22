@@ -20,6 +20,11 @@ Az oktatókat a hallgatók tudják értékelni 1-5-ig számokkal amelyeket az ad
 * Backend:
   - Seres Szabolcs
   - Vastag Demeter
+* Tesztelés:
+  - Seres Szabolcs
+  - Vastag Demeter
+  - Szkleván Richárd
+  - Szabó Richárd 
 
 ### 2.3 Ütemterv
 |Funkció                  | Feladat                   | Prioritás | Becslés (nap) | Aktuális becslés (nap) | Eltelt idő (nap) | Határidő (nap) |
@@ -68,7 +73,8 @@ A weboldal meglátogatása után azonnal használható. A felhasználó megtegin
 ## 5. Funkcionális terv
 
 ### 5.1 Rendszerszereplők
-Az oldal a felhasználó számítógépén érhető el.
+Az oldal a felhasználó számítógépén érhető el, de éles környezetben egy külön szervert biztosítanánk az oldal elérésére.
+Internet elérés nem kell közvetlenül a rendszer működéséhez.
 
 ### 5.2 Menü-hierarchia
   - Navigációs sáv: Itt navigálhatunk a különféle oldalak között.
