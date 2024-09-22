@@ -82,7 +82,14 @@ A követelményeknek megfelelő, Windows-ra alkalmas számítógépek, amik tudj
 Visual Studio Code.
 
 ## 7. Architechtúrális terv
-A program képes futni bármely böngészőben egy internetelérésre alkalmas eszközön. Az alkalmazás futtatásához tehát szükség lesz internetkapcsolatra és egy háttér adatbázisra az adatok tárolására és kezelésére.
+### Webszerver
+   - Apache webszerver.
+### Adatbázis rendszer
+   - MySQL alapú adatbázis rendszer.
+### A program elérése, kezelése
+   - A program működéséhez szükséges technológiák: HTML, CSS, PHP. A fejlesztési és helyi futtatási környezetben XAMPP használható.
+   - Éles környezetben egy szervergépre van szükség, ahol az Apache webszerver, PHP és MySQL megfelelően konfigurálva vannak.
+
 ## 8. Adatbázis terv
 (../Img/AdatbázisTerv.png)
 ## 9. Implementációs terv
