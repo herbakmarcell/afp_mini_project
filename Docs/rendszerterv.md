@@ -80,7 +80,7 @@ Internet elérés nem kell közvetlenül a rendszer működéséhez.
   - Navigációs sáv: Itt navigálhatunk a különféle oldalak között.
   - Bejelentkező, Regisztráció oldal: Értékelés és vélemény írásához szükséges egy felhasználói profil.
   - Főoldal: Az adatbázisban szereplő tanárok megjelenítése
-  - Mellékoldal: Miután a főoldalon kiválasztottuk melyik tanár profilját szeretnénk megteginteni itt megjelennek az adott tanár adatai, az eddigi értékeléseinek összesítése és a róla alkotott vélemények komment formában. Valamint ezen az oldalon tud maga a felhasználó is értékelni és véleményezni.
+  - Mellékoldal: Miután a főoldalon kiválasztottuk melyik tanár profilját szeretnénk megteginteni itt megjelennek az adott tanár adatai, az eddigi értékeléseinek összesítése és a róla alkotott vélemények komment formában. Ezen az oldalon tud maga a felhasználó is értékelni és véleményezni, az összes kommentet, a saját és az összesített átlag értékelést is látja a felhasználó.
 
 ## 6. Fizikai környezet
 ### Hardver környezet
