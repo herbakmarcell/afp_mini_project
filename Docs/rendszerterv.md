@@ -80,7 +80,9 @@ Az oldal a felhasználó számítógépén érhető el.
 ### Hardver környezet
 Minden régebbi és új Windowst támogat ami tudja futtatni megfelelően a weboldal egyes komponenseit.
 ### Fizikai alrendszerek
-A követelményeknek megfelelő, Windows-ra alkalmas számítógépek, amik tudják futtatni a Visual Studio Code-t.
+A követelményeknek megfelelő, Windows-ra alkalmas számítógépek, amik tudják futtatni a böngészőben megjelenő weboldalt.
+Az oldal egy lokális, helyi adatbázis szervert használ az adatok tárolására és megjelenítésére. 
+
 ### Fejlesztői eszközök
 Visual Studio Code.
 
