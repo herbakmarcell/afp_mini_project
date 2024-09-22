@@ -31,13 +31,13 @@ Célunk egy olyan értékelő- és véleményező oldal kialakítása, amely át
 |Program                  |Tesztelés                  |         4 |             2 |                      0 |                0 |                   2 |
 
 ## 3. Üzleti folyamatok modellje
-(../Img/uzleti_folyamatok_modellje.png)
+![Üzleti folyamatok](../Img/uzleti_folyamatok_modellje.png)
 
 ### 3.1 Üzleti szereplők
 Az oldalon regisztrálni kell a felhasználónak ha értékelést vagy kommentet szeretne írni az oktatóról. A weboldal meglátogatásához nincsen szükség semmilyen szoftver letöltéséhez vagy megvételéhez.
 
 ### 3.2 Üzleti folyamatok
-A weboldal meglátogatása után azonnal használható az alkalmazás. A felhasználó megtegintheti az összes eddigi értékelést és kommentet az oktatókról, ha szeretne regisztráció és bejelentkezés után saját értékelést és véleményt adhat hozzá.
+A weboldal meglátogatása után azonnal használható. A felhasználó megtegintheti az összes eddigi értékelést és kommentet az oktatókról, ha szeretne regisztráció és bejelentkezés után saját értékelést és véleményt adhat hozzá.
 
 ## 4. Követelmények
 ### Követelménytáblázat
