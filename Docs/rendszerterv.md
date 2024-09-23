@@ -39,6 +39,11 @@ Az oktatókat a hallgatók tudják értékelni 1-5-ig számokkal amelyeket az ad
 |Program                  |Tesztelés                  |         4 |             2 |                      0 |                0 |                   2 |
 ### 2.4 Mérföldkövek
    * 09.19 Követelményspecifikáció elkészítve
+   * - Funkcionális specifikáció elkészítve
+   * - Rendszerterv elkészítve
+   * - Backend és Front-end elkészítve
+   * - Előzetes tesztelések elkészítve
+   * - Kész oldal prezentálása
 
 ## 3. Üzleti folyamatok modellje
 ![Üzleti folyamatok](../Img/uzleti_folyamatok_modellje.png)
