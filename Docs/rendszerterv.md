@@ -37,6 +37,8 @@ Az oktatókat a hallgatók tudják értékelni 1-5-ig számokkal amelyeket az ad
 |Program                  |Alapfunkciók elkészítése   |         3 |             5 |                      0 |                0 |                   5 |
 |Program                  |Extra funkciók elkészítése |         3 |             3 |                      0 |                0 |                   3 |
 |Program                  |Tesztelés                  |         4 |             2 |                      0 |                0 |                   2 |
+### 2.4 Mérföldkövek
+   * 09.19 Követelményspecifikáció elkészítve
 
 ## 3. Üzleti folyamatok modellje
 ![Üzleti folyamatok](../Img/uzleti_folyamatok_modellje.png)
