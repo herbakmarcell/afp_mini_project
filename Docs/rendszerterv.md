@@ -118,6 +118,16 @@ Visual Studio Code.
 A szoftvert/weboldalt teszteljük még mielőtt eljuttatnánk a megrendelőhöz. Tesztnaplót vezetünk amely segítségével tudjuk követni, hogy hol és milyen hibákat tartalmaz a program. A tesztnaplóba feltüntetjük azt is
 hogy miket teszteltünk a programban is nem csak a hibás részeket.
 
+### A tesztelési jegyzőkönyv
+
+**Tesztelő:** Vezetéknév Keresztnév
+
+**Tesztelés dátuma:** Év.Hónap.Nap
+
+Tesztszám | Rövid leírás | Várt eredmény | Eredmény | Megjegyzés
+----------|--------------|---------------|----------|-----------
+... | ... | ... | ... | ...
+
 ## 11. Telepítési terv
    ### Fizikai telepítési terv
    * A felhasználónak szüksége van egy működő számítógépre vagy mobil eszközre, amely rendelkezik internetkapcsolattal és modern böngészővel (pl. Chrome, Firefox).
