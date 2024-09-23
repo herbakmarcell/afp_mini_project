@@ -62,9 +62,9 @@ A felhasználó a főoldalon láthatja az összes tanárt kártyák formájában
 
  | Id | Követelmény | Funkció |
  | :---: | --- | --- |
- | K1  | Hibamentes működés| Az adatbázis a megfelelő normálformában van. |
- | K2  | Hibamentes működés, letisztult megjelenités| A felhasználók ellenőrzött módon tudnak regisztrálni az oldalra. Adott feltételeknek megfelelő e-mail címet és jelszót adnak meg. Megfelelő módon kerülnek tárolásra a megadott adatok az adatbázisban. |
- | K3  | Hibamentes működés, letisztult megjelenités| A regisztrált e-mail cím és a hozzá tartozó jelszó megadását követően az oldal bejelentkezteti a hallgatót a felületre. |
+ | K1  | Hibamentes működés, 3NF| Az adatbázis a megfelelő normálformában van. |
+ | K2  | Hibamentes működés, letisztult megjelenités, ellenőrzött regisztráció| A felhasználók ellenőrzött módon tudnak regisztrálni az oldalra. Adott feltételeknek megfelelő e-mail címet és jelszót adnak meg. Megfelelő módon kerülnek tárolásra a megadott adatok az adatbázisban. |
+ | K3  | Hibamentes működés, letisztult megjelenités, ellenőrzött bejelentkezés| A regisztrált e-mail cím és a hozzá tartozó jelszó megadását követően az oldal bejelentkezteti a hallgatót a felületre. |
  | K4  | Hibamentes működés, letisztult megjelenités| Tisztán, elkülöníthetően és rendezett módon jelennek meg az oktatók a főoldalon. |
  | K5  | Hibamentes működés, letisztult megjelenités| Minden tanárnak lesz egy külön oldal, ahol több dolgot is olvasthatnak majd a felhasználók. |
  | K6  | Hibamentes működés, letisztult megjelenítés | Bejelentkezést követően értékelést is lehet küldeni az oldalra. Az értékelés az adatbázisban tárolódik el az adott felhasználó és az adott oktató kapcsolatában. |
