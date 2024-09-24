@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bejelentkezés</title>
+</head>
+<body>
+    <nav>
+        <p class="title"><a href="index.html">Tanár értékelő</a></p>
+        <a href="#" class="hmenu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="linkek">
+            <ul>
+                <li><a href="login.html" class="active">Bejelentkezés</a></li>
+                <li><a href="registration.html">Regisztráció</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="../projectImg/l2.png" alt="login_img" class="bkep">
+        <div class="jobb">
+            <div class="kozep">
+                <h1>Bejelentkezés</h1>
+                <form action="">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="jelszo">Jelszó:</label>
+                    <input type="password" name="jelszo" id="jelszo">
+                    <input type="submit" value="Bejelentkezés" id="belepes" name="belepes">
+                    <p>Még nincs fiókja? <a href="registration.html">Regisztráljon itt!</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

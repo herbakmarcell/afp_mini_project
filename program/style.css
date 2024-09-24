@@ -1,0 +1,176 @@
+:root {
+    --kek: #0E65B5;
+    --vilagoskek: #2C98FB;
+    --sotetkek: #00396E;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Navbar */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--kek);
+    color: white;
+    width: 100%;
+}
+.title{
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+.title a{
+    color: white;
+    text-decoration: none;
+}
+.linkek ul{
+    display: flex;
+}
+.linkek li{
+    list-style: none;
+    margin: 0 5px;
+}
+.linkek li a{
+    text-decoration: none;
+    color: white;
+    padding: 7px;
+    background-color: var(--vilagoskek);
+    border-radius: 25px;
+    width: 140px;
+    display: inline-block;
+    text-align: center;
+}
+.linkek li .active, .linkek li a:hover{
+    background-color: var(--sotetkek);
+}
+.hmenu{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.hmenu .bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+/* Navbar vége */
+
+@media (max-width: 550px){
+    /* Navbar */
+    .hmenu{
+        display: flex;
+    }
+    .linkek{
+        display: none;
+        width: 100%;
+    }
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .linkek ul{
+        flex-direction: column;
+        width: 100%;
+        padding: 5px 0;
+    }
+    .linkek li{
+        text-align: center;
+    }
+    .linkek li a{
+        padding: .5rem 1rem;
+        display: block;
+        border-radius: 8px;
+        margin: 2px 0;
+        width: 100%;
+    }
+    .linkek.active{
+        display: flex;
+    }
+    /* Navbar vége */
+}
+@media (max-width: 620px){
+    .container .bkep{
+        display: none;
+    }
+    .container .jobb {
+        width: 100%;
+        background-image: url('../projectImg/l2.png');
+        background-size: cover;
+        background-position: center;
+        flex: 1;
+    }
+    .container .jobb .kozep{
+        background-color: rgba(255, 255, 255, 0.149);
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .container .jobb .kozep h1{
+        color: white;
+        text-shadow: 2px 2px 4px var(--vilagoskek);
+    }
+}
+
+.container{
+    width: 100%;
+    height: calc(100vh - 43px);
+    display: flex;
+    flex-direction: row;
+}
+.container .jobb{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container .jobb h1{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.container .jobb form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    padding: 20px;
+}
+.container .jobb form input{
+    margin: 5px 0 15px 0;
+    height: 30px;
+    font-size: 16px;
+    padding: 5px;
+}
+.container .jobb form #belepes{
+    background-color: var(--kek);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    height: 40px;
+}
+.container .jobb form p{
+    text-align: center;
+    margin: 20px 0;
+}
+.container .bkep{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
