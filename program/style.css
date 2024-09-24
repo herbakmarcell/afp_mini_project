@@ -127,6 +127,14 @@ nav{
         color: white;
         text-shadow: 2px 2px 4px var(--vilagoskek);
     }
+    .container .jobb .kozep p a{
+        color: white;
+        text-shadow: 2px 2px 4px var(--sotetkek);
+    }
+    .container .jobb .kozep p a:hover{
+        color: var(--vilagoskek);
+        text-shadow: 2px 2px 2px black;
+    }
 }
 
 .container{
