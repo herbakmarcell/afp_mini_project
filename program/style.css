@@ -113,7 +113,7 @@ nav{
     }
     .container .jobb {
         width: 100%;
-        background-image: url('../projectImg/l2.png');
+        background-image: url('../projectImg/login_img.png');
         background-size: cover;
         background-position: center;
         flex: 1;
@@ -165,9 +165,20 @@ nav{
     border-radius: 25px;
     height: 40px;
 }
+.container .jobb form #belepes:hover{
+    background-color: var(--sotetkek);
+    cursor: pointer;
+}
 .container .jobb form p{
     text-align: center;
     margin: 20px 0;
+}
+.container .jobb form p a{
+    color: var(--kek);
+    text-decoration: none;
+}
+.container .jobb form p a:hover{
+    color: var(--sotetkek);
 }
 .container .bkep{
     width: 50%;
