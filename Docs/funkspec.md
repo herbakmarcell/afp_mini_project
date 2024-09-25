@@ -79,7 +79,7 @@ Regisztrálás után a bejelentkező felületre irányítja a hallgatót az olda
 Bejelentkezéskor az adatbázisba felvitt adatokat összeveti a felhasználó által megadottakkal. Ha egyezik az email és jelszó, akkor belépteti a főoldalra.
 Az oktatókat több különböző szemppont szerint lehet rendezni, valamint lehetséges a felhasználó által történt keresés is. 
 Az értékelés 1-5 skálán folyik, amelyből átlagot vonunk, ami egyben az egyik szűrőfeltétel. Másik két szemppont az oktató neve és az összes tantárgy alapján.
-Fix számú oktató jelenik meg a főoldalon, ahhoz, hogy a többi tanárt is lássák a hallgatók a lapozó funkciót hasnálhatják.
+Fix számú oktató jelenik meg a főoldalon, ahhoz, hogy a többi tanárt is lássák a hallgatók a lapozó funkciót használhatják.
 
 Ha többet szeretne tudni a diák egy adott tanárról, akkor a kártyáján lévő információ gombra kattintva egy új oldal jelenik meg. Ezen az oldalon részletesebb információt kap az oktatóról. Itt lesz lehetősége a bejelentkezett hallgatóknak személyreszabott véleményt írni és értékelni.  
 
