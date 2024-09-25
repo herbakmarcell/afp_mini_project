@@ -60,6 +60,28 @@ A felhasználó a főoldalon láthatja az összes tanárt kártyák formájában
 
 ## 9. Forgatókönyv
 
+A program elindítása után a főoldal jelenik meg az oldal látogatója előtt, melyben a következők jelennek meg:
+* bejelentkezés
+* regisztráció
+* legjobban értékelt tanárok
+* szűrő mezők
+* tanárok listája
+* footer
+
+A regisztrációra gombra kattintva elnavigálja a hallgatót a regisztrációs oldalra. Itt a következő funkciók jelennek meg:
+* felhasználónév
+* email
+* jelszó
+* jelszó mégegyszer
+* regisztrációs gomb
+
+Regisztrálás után a bejelentkező felületre irányítja a hallgatót az oldal, majd bejelentkezés után tudja értékelni vagy véleményezni az oktatókat.
+Bejelentkezéskor az adatbázisba felvitt adatokat összeveti a felhasználó által megadottakkal. Ha egyezik az email és jelszó, akkor belépteti a főoldalra.
+Az oktatókat több különböző szemppont szerint lehet rendezni, valamint lehetséges a felhasználó által történt keresés is. 
+Az értékelés 1-5 skálán folyik, amelyből átlagot vonunk, ami egyben az egyik szűrőfeltétel. Másik két szemppont az oktató neve és az összes tantárgy alapján.
+Fix számú oktató jelenik meg a főoldalon, ahhoz, hogy a többi tanárt is lássák a hallgatók a lapozó funkciót hasnálhatják.
+
+Ha többet szeretne tudni a diák egy adott tanárról, akkor a kártyáján lévő információ gombra kattintva egy új oldal jelenik meg. Ezen az oldalon részletesebb információt kap az oktatóról. Itt lesz lehetősége a bejelentkezett hallgatóknak személyreszabott véleményt írni és értékelni.  
 
 
 ## 10. Funkció - követelmény megfeleltetése
