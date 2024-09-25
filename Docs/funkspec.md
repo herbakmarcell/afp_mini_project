@@ -52,6 +52,10 @@ A felhasználó a főoldalon láthatja az összes tanárt kártyák formájában
 
 ## 8. Képernyő képek
 
+![Főoldal](../Img/Főoldal.png)
+![bejelentkezes_kepernyoterv](../Img/bejelentkezes_kepernyoterv.png)
+![regisztracio_kepernyoterv](../Img/regisztracio_kepernyoterv.png)
+![tanarinformacioOldal](../Img/tanarInformacio.png)
 
 
 ## 9. Forgatókönyv
