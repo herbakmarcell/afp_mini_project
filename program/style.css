@@ -107,13 +107,13 @@ nav{
     }
     /* Navbar vége */
 }
-@media (max-width: 620px){
+@media (max-width: 650px){
     .container .bkep{
         display: none;
     }
     .container .jobb {
         width: 100%;
-        background-image: url('../projectImg/login_img.png');
+        background-image: url('projectImg/login_img.png');
         background-size: cover;
         background-position: center;
         flex: 1;
@@ -121,7 +121,7 @@ nav{
     .container .jobb .kozep{
         background-color: rgba(255, 255, 255, 0.149);
         border-radius: 10px;
-        padding: 20px;
+        padding: 20px 0;
     }
     .container .jobb .kozep h1{
         color: white;
