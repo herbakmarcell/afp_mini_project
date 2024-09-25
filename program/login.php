@@ -10,6 +10,8 @@
    $hibak = [];
 
 require './functions.php';
+require './database.php';
+
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $email_helyes = check_data("email|nem_ures");
@@ -21,8 +23,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     {
         $hibak[] = "Az email nem megfelelő";
     }
-
-
+    
     $jelszo_helyes = check_data("jelszo|nem_ures,jelszo_megfelel");
    if($jelszo_helyes)
     {
@@ -33,6 +34,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     {
         $hibak[] = "A jelszó nem megfelelő";
     }
+
+    if($eredmeny = $conn -> query("select email, jelszo from felhasznalok where email = '" . $email . "' and jelszo = '" . $jelszo . "';"))
+    {
+        echo $eredmeny -> num_rows;
+    }    
+
+    $conn -> close();
 }
 else 
 {

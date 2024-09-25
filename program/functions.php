@@ -45,7 +45,6 @@ function jelszo_megfelel($input){
     if(empty($input) ||strlen($input) < 5 || !preg_match('/[A-Za-z0-9]/', $input))
         return false;
     return true;
-   
-
-    
+      
 }
+
