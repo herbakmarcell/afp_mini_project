@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Bejelentkezés</title>
 </head>
-<?php 
-   $hibak = [];
+<?php
+$hibak = [];
 
 require './functions.php';
 require './database.php';
 
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $jo_adatok = 0;
     $email_helyes = check_data("email|nem_ures");
-    if($email_helyes)
-    {
+    if ($email_helyes) {
         $email = tisztit($_POST['email']);
-    }
-    else 
-    {
+        $jo_adatok++;
+    } else {
         $hibak[] = "Az email nem megfelelő";
     }
-    
+
     $jelszo_helyes = check_data("jelszo|nem_ures,jelszo_megfelel");
-   if($jelszo_helyes)
-    {
+    if ($jelszo_helyes) {
         $jelszo = tisztit($_POST['jelszo']);
-        
-    }
-    else 
-    {
+        $jo_adatok++;
+    } else {
         $hibak[] = "A jelszó nem megfelelő";
     }
 
-    if($eredmeny = $conn -> query("select email, jelszo from felhasznalok where email = '" . $email . "' and jelszo = '" . $jelszo . "';"))
+    if ($jo_adatok == 2) //Az emailnek és a jelszónak is jónak kell lennie
     {
-        echo $eredmeny -> num_rows;
-    }    
+        if ($eredmeny = $conn->query("select email, jelszo from felhasznalok where email = '" . $email . "' and jelszo = '" . $jelszo . "';")) {
+            if ($eredmeny->num_rows == 1) { //Talált egy felhasználót
+                $ertek = $eredmeny->fetch_column();
 
-    $conn -> close();
-}
-else 
-{
+                echo "A bejelentkezés sikeres";
+            } else {
+                $hibak[] = "Nem találtunk ilyen felhasználót!";
+            }
+
+        }
+    }
+
+
+    $conn->close();
+} else {
     http_response_code(405);
 }
 
@@ -71,7 +76,7 @@ else
         <div class="jobb">
             <div class="kozep">
                 <h1>Bejelentkezés</h1>
-                <form action="" method ="POST">
+                <form action="" method="POST">
                     <label for="email">E-mail:</label>
                     <input type="email" name="email" id="email" required>
                     <label for="jelszo">Jelszó:</label>
@@ -79,11 +84,11 @@ else
                     <input type="submit" value="Bejelentkezés" id="belepes" name="belepes">
                     <p>Még nincs fiókja? <a href="registration.html">Regisztráljon itt!</a></p>
                 </form>
-               
-                <?php foreach($hibak as $hiba): ?>
-                    <h1><?=$hiba?></h1>
+
+                <?php foreach ($hibak as $hiba): ?>
+                    <h1><?= $hiba ?></h1>
                 <?php endforeach; ?>
-               
+
             </div>
         </div>
     </div>
