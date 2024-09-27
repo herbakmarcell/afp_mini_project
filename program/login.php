@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <nav>
-        <p class="title"><a href="index.html">Tanár értékelő</a></p>
+        <p class="title"><a href="index.php">Tanár értékelő</a></p>
         <a href="#" class="hmenu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </a>
         <div class="linkek">
             <ul>
-                <li><a href="login.html" class="active">Bejelentkezés</a></li>
+                <li><a href="login.php" class="active">Bejelentkezés</a></li>
                 <li><a href="registration.html">Regisztráció</a></li>
             </ul>
         </div>
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </form>
 
                 <?php foreach ($hibak as $hiba): ?>
-                    <h1><?= $hiba ?></h1>
+                    <p class="hibauzenet"><?= $hiba ?></p>
                 <?php endforeach; ?>
 
             </div>
