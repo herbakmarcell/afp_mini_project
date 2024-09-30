@@ -6,37 +6,6 @@
     color:white;
 }
 
-.fooldalBody nav ul li
-{
-    position: relative;
-}
-
-.fooldalBody nav ul li a
-{
-    width: 150px;
-}
-
-#hazIkon
-{
-    position: absolute;
-    top:10%;
-    left:10%;
-}
-
-#regIkon
-{
-    position: absolute;
-    top:10%;
-    left:5%;
-}
-
-#loginIkon
-{
-    position: absolute;
-    top:10%;
-    left:-1%;
-}
-
 .fooldalBody h1
 {
     background-color: var(--kek);

@@ -45,14 +45,18 @@ nav{
     margin: 0 5px;
 }
 .linkek li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     color: white;
-    padding: 7px;
     background-color: var(--vilagoskek);
     border-radius: 25px;
-    width: 140px;
-    display: inline-block;
-    text-align: center;
+    width: 150px;
+}
+.linkek li span{
+    padding: 7px 3px 7px 0;
+    font-size: 22px;
 }
 .linkek li .active, .linkek li a:hover{
     background-color: var(--sotetkek);
@@ -75,7 +79,7 @@ nav{
 }
 /* Navbar vége */
 
-@media (max-width: 550px){
+@media (max-width: 670px){
     /* Navbar */
     .hmenu{
         display: flex;
@@ -97,8 +101,10 @@ nav{
         text-align: center;
     }
     .linkek li a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: .5rem 1rem;
-        display: block;
         border-radius: 8px;
         margin: 2px 0;
         width: 100%;
