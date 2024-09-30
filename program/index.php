@@ -9,72 +9,37 @@ include_once("database.php");
 
 $table = "<div class='tanarContainer'>";
 
+
+
+$tantargy = "";
+$sqlSubject = "SELECT * FROM tantargyak";
+$querySubject = mysqli_query($conn, $sqlSubject);
+
+while ($row = mysqli_fetch_assoc($querySubject)) {
+    $tantargy .= "<option values={$row["id"]}>{$row["nev"]}</option>";
+}
+
+$tantargy .= "
+    </select>";
+
+
+
 // A felhasználó által keresett kritériumok lekérdezése
 if (isset($_POST['kereses'])) {
+    $tantargyak = $_POST['tantargy'] !== "--- Válassz ---" ? $_POST['tantargy'] : "";
+    $ertekelesek = $_POST['ertekeles'] ? $_POST['ertekeles'] : 0;
+    $tanarok = $_POST['tanar'] ? $_POST['tanar'] : "";
 
-    $ertekeles = "";
-    $tanar = "";
-
-    if (!empty($_POST['tantargy'])) {
-        echo $_POST['tantargy'];
-    }
-
-
-
-    //Ha nem üres az értékelés mező
-    if (!empty($_POST['ertekeles'])) {
-        $ertekeles = $_POST['ertekeles'];
-
-        $sqlFind = "SELECT tanarok.id as 'id', concat(tanarok.vezeteknev, ' ', tanarok.keresztnev) as 'tanar', tantargyak.nev as 'nev', round(avg(ertekelesek.ertekeles), 1) AS 'ertekeles' FROM tantargyak INNER JOIN tantargykapcsolotabla on tantargyak.id = tantargykapcsolotabla.tantargy_id INNER JOIN tanarok on tantargykapcsolotabla.tanar_id = tanarok.id INNER JOIN ertekelesek on tanarok.id = ertekelesek.tanar_id
-        GROUP BY tanarok.vezeteknev, tanarok.keresztnev HAVING ertekeles >= $ertekeles;
-        ";
-    }
-    //Ha a tanár mező nem üres
-    else if (!empty($_POST['tanar'])) {
-        $tanar = $_POST["tanar"];
-
-        $sqlFind = "SELECT tanarok.id as 'id', concat(tanarok.vezeteknev, ' ', tanarok.keresztnev) as 'tanar', tantargyak.nev as 'nev', round(avg(ertekelesek.ertekeles), 1) AS 'ertekeles' FROM tantargyak INNER JOIN tantargykapcsolotabla on tantargyak.id = tantargykapcsolotabla.tantargy_id INNER JOIN tanarok on tantargykapcsolotabla.tanar_id = tanarok.id INNER JOIN ertekelesek on tanarok.id = ertekelesek.tanar_id 
-        GROUP BY tanarok.vezeteknev, tanarok.keresztnev having tanarok.vezeteknev like '%$tanar%' or tanarok.keresztnev LIKE '%$tanar%'";
-    }
-    //Ha egyik mező sem üres
-    else if (!empty($_POST['tanar']) && !empty($_POST['ertekeles'])) {
-        $tanar = $_POST["tanar"];
-        $ertekeles = $_POST['ertekeles'];
-        $sqlFind = "SELECT tanarok.id as 'id', concat(tanarok.vezeteknev, ' ', tanarok.keresztnev) as 'tanar', tantargyak.nev as 'nev', round(avg(ertekelesek.ertekeles), 1) AS 'ertekeles' FROM tantargyak INNER JOIN tantargykapcsolotabla on tantargyak.id = tantargykapcsolotabla.tantargy_id INNER JOIN tanarok on tantargykapcsolotabla.tanar_id = tanarok.id INNER JOIN ertekelesek on tanarok.id = ertekelesek.tanar_id GROUP BY tanarok.vezeteknev, tanarok.keresztnev having ertekeles >= $ertekeles and (tanarok.vezeteknev like '%$tanar%' or tanarok.keresztnev LIKE '%$tanar%')";
-    }
-
+    $sqlFind = "SELECT tanarok.id AS 'id', tanarok.vezeteknev, tanarok.keresztnev, tantargyak.nev AS 'nev', tanarok.atlag AS 'ertekeles' FROM tantargyak INNER JOIN tantargykapcsolotabla ON tantargyak.id = tantargykapcsolotabla.tantargy_id INNER JOIN tanarok ON tanarok.id = tantargykapcsolotabla.tanar_id GROUP BY id, tanarok.vezeteknev, tanarok.keresztnev, nev, ertekeles having ertekeles >= $ertekelesek and nev like '%$tantargyak%' and concat(tanarok.vezeteknev, ' ', tanarok.keresztnev) like '%$tanarok%'";
 
     $queryFind = mysqli_query($conn, $sqlFind);
-
 
     if (mysqli_num_rows($queryFind) > 0) {
         $picture = "./projectImg/manFace.png";
         while ($row = mysqli_fetch_assoc($queryFind)) {
-            $table .=
-                "<div class='box'>
-            <img src={$picture} alt='tanar kep' title='tanar kep' width=200px height=200px />
-            <p>{$row["tanar"]}</p>
-            <h3>{$row["nev"]}</h3>
-            <h3>{$row["ertekeles"]}</h3>
-            <a href='informacio.php?id={$row["id"]}'><button type='button'>Információk</button></a>
-        </div>";
-        }
-        $table .= "</div>";
-    } else {
-        $table .= "Nincs ilyen tanár.";
-        $ertekeles = "";
-        $tanar = "";
-    }
-} else {
-    // Összes tanár lekérdezése
-    //Ha nem kattintott rá a keresés gombra.
-    $sql = "SELECT tanarok.vezeteknev as 'vezeteknev', tanarok.keresztnev as 'keresztnev', tanarok.id as 'id', tantargyak.nev as 'nev', round(avg(ertekelesek.ertekeles), 1) as 'ertekeles' FROM `tantargykapcsolotabla` inner join tanarok on tantargykapcsolotabla.tanar_id = tanarok.id inner join ertekelesek on tanarok.id = ertekelesek.tanar_id inner JOIN tantargyak on tantargyak.id = tantargykapcsolotabla.tantargy_id GROUP BY tanarok.vezeteknev, tanarok.keresztnev";
-    $query = mysqli_query($conn, $sql);
 
-
-    if (mysqli_num_rows($query) > 0) {
-        $picture = "./projectImg/manFace.png";
-        while ($row = mysqli_fetch_assoc($query)) {
+            $ertekelesStyle = $row["ertekeles"] > 0 ? "" : "red";
+            $ertekelesStyle = $row["ertekeles"] > 0 ? "projectImg/ratingStar.png" : "projectImg/red_star.png";
             $table .=
                 "<div class='box'>
                     <div class=\"tanarPictureDiv\">
@@ -83,8 +48,49 @@ if (isset($_POST['kereses'])) {
                     <div class=\"tanarInfoDiv\">
                         <h3>{$row["vezeteknev"]} {$row["keresztnev"]}</h3>
                         <h4>{$row["nev"]}</h4>
-                        <div class=\"ratingDiv\">
-            <img src=\"projectImg/ratingStar.png\" alt=\"ratingStar_img\" class=\"topRatingImg\"><p>{$row["ertekeles"]}</p></div>
+                        <div class=\"ratingDiv\" >
+            <img src=$ertekelesStyle alt=\"ratingStar_img\" class=\"topRatingImg\" ><p style=\"color= $ertekelesStyle\" >{$row["ertekeles"]}</p></div>
+                    </div>
+                    <div class=\"tanarInfoButton\">
+                        <button type='button'><a href='informacio.php?id={$row["id"]}'>Információk</a></button>
+                    </div>
+        </div>";
+        }
+        $table .= "</div>";
+
+    $tantargyak = "";
+    $ertekelesek = 0;
+    $tanarok = "";
+    } else {
+        $table .= "Nincs ilyen tanár.";
+        $tantargyak = "";
+        $ertekelesek = 0;
+        $tanarok = "";
+    }
+} else {
+    // Összes tanár lekérdezése
+    //Ha nem kattintott rá a keresés gombra.
+
+    $sql = "SELECT tanarok.id AS 'id', tanarok.vezeteknev, tanarok.keresztnev, tantargyak.nev AS 'nev', tanarok.atlag AS 'ertekeles' FROM tantargyak INNER JOIN tantargykapcsolotabla ON tantargyak.id = tantargykapcsolotabla.tantargy_id INNER JOIN tanarok ON tanarok.id = tantargykapcsolotabla.tanar_id GROUP BY id, tanarok.vezeteknev, tanarok.keresztnev, nev, ertekeles";
+    $query = mysqli_query($conn, $sql);
+
+
+    if (mysqli_num_rows($query) > 0) {
+        $picture = "./projectImg/manFace.png";
+        while ($row = mysqli_fetch_assoc($query)) {
+
+            $ertekelesStyle = $row["ertekeles"] > 0 ? "" : "red";
+            $ertekelesStyle = $row["ertekeles"] > 0 ? "projectImg/ratingStar.png" : "projectImg/red_star.png";
+            $table .=
+                "<div class='box'>
+                    <div class=\"tanarPictureDiv\">
+                        <img src={$picture} alt='tanar kep' title='tanar kep' class=\"tanarPicture\" />
+                    </div>
+                    <div class=\"tanarInfoDiv\">
+                        <h3>{$row["vezeteknev"]} {$row["keresztnev"]}</h3>
+                        <h4>{$row["nev"]}</h4>
+                        <div class=\"ratingDiv\" >
+            <img src=$ertekelesStyle alt=\"ratingStar_img\" class=\"topRatingImg\" ><p style=\"color= $ertekelesStyle\" >{$row["ertekeles"]}</p></div>
                     </div>
                     <div class=\"tanarInfoButton\">
                         <button type='button'><a href='informacio.php?id={$row["id"]}'>Információk</a></button>
@@ -93,15 +99,11 @@ if (isset($_POST['kereses'])) {
         }
         $table .= "</div>";
     }
-
-
-
-
 }
 
 // Legjobbra értékelt tanárok lekérdezése
 
-$sqlTop = "SELECT tanarok.vezeteknev AS 'vezeteknev', tanarok.keresztnev AS 'keresztnev', round(avg(ertekelesek.ertekeles), 1) AS 'atlag' FROM `tanarok` inner JOIN ertekelesek on tanarok.id = ertekelesek.tanar_id GROUP BY tanarok.vezeteknev, tanarok.keresztnev ORDER BY atlag DESC limit 6";
+$sqlTop = "SELECT tanarok.vezeteknev AS 'vezeteknev', tanarok.keresztnev AS 'keresztnev', atlag FROM `tanarok` GROUP BY tanarok.vezeteknev, tanarok.keresztnev, atlag having atlag > 0 ORDER BY atlag DESC limit 6;";
 $queryTop = mysqli_query($conn, $sqlTop);
 
 $topTable = "<div class='toplistacontainer'>";
@@ -164,6 +166,11 @@ $topTable .= "</div>";
 
     <div class="keresesDiv">
         <form action="" method="post">
+            <label for="tantargy">Tantárgy:
+                <select name='tantargy'>
+                    <option>--- Válassz ---</option>
+                    <?php echo $tantargy;  ?>
+                </select></label>
             <div class="keresoMezoDiv"><label for="ertekeles">Értékelés:
                     <input type="number" name="ertekeles" id="ertekeles">
                 </label>
