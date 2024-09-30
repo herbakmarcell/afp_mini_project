@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 
 include_once("database.php");
 
-$table = "<div class='container'>";
+$table = "<div class='tanarContainer'>";
 
 // A felhasználó által keresett kritériumok lekérdezése
 if (isset($_POST['kereses'])) {
@@ -15,7 +15,7 @@ if (isset($_POST['kereses'])) {
     $ertekeles = "";
     $tanar = "";
 
-    if(!empty($_POST['tantargy'])){
+    if (!empty($_POST['tantargy'])) {
         echo $_POST['tantargy'];
     }
 
@@ -77,11 +77,17 @@ if (isset($_POST['kereses'])) {
         while ($row = mysqli_fetch_assoc($query)) {
             $table .=
                 "<div class='box'>
-            <img src={$picture} alt='tanar kep' title='tanar kep' width=200px height=200px />
-            <p>{$row["vezeteknev"]} {$row["keresztnev"]}</p>
-            <h3>{$row["nev"]}</h3>
-            <h3>{$row["ertekeles"]}</h3>
-            <a href='informacio.php?id={$row["id"]}'><button type='button'>Információk</button></a>
+                    <div class=\"tanarPictureDiv\">
+                        <img src={$picture} alt='tanar kep' title='tanar kep' class=\"tanarPicture\" />
+                    </div>
+                    <div class=\"tanarInfoDiv\">
+                        <h3>{$row["vezeteknev"]} {$row["keresztnev"]}</h3>
+                        <h4>{$row["nev"]}</h4>
+                        <p>{$row["ertekeles"]}</p>
+                    </div>
+                    <div class=\"tanarInfoButton\">
+                        <button type='button'><a href='informacio.php?id={$row["id"]}'>Információk</a></button>
+                    </div>
         </div>";
         }
         $table .= "</div>";
@@ -89,7 +95,7 @@ if (isset($_POST['kereses'])) {
 
 
 
-    
+
 }
 
 // Legjobbra értékelt tanárok lekérdezése
@@ -103,11 +109,12 @@ if (mysqli_num_rows($queryTop) > 0) {
     while ($top = mysqli_fetch_assoc($queryTop)) {
         $topTable .=
             "<div class='topBox'>
-            <p>{$top["vezeteknev"]} {$top["keresztnev"]} {$top["atlag"]}</p>
+            <p>{$top["vezeteknev"]} {$top["keresztnev"]}</p> <div class=\"ratingDiv\">
+            <img src=\"projectImg/ratingStar.png\" alt=\"ratingStar_img\" class=\"topRatingImg\"><p>{$top["atlag"]}</p></div>
         </div>";
     }
-    $topTable .= "</div>";
 }
+$topTable .= "</div>";
 
 
 ?>
@@ -118,26 +125,77 @@ if (mysqli_num_rows($queryTop) > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Főoldal</title>
-
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="fooldalBody">
+    <nav>
+        <p class="title"><a href="index.php">Tanár értékelő</a></p>
+        <a href="#" class="hmenu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="linkek">
+            <ul>
+                <li><span id="hazIkon" class="material-symbols-outlined">
+                        home
+                    </span><a href="#" class="active">Főoldal</a></li>
+                <li><span id="loginIkon" class="material-symbols-outlined">
+                        login
+                    </span><a href="login.php">Bejelentkezés</a></li>
+                <li><span id="regIkon" class="material-symbols-outlined">
+                        arrow_upward
+                    </span><a href="registration.html">Regisztráció</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="headerImg">
+        <img src="projectImg/login_img.png" alt="login_img" class="bkep">
+        <figcaption>Tanárértékelő</figcaption>
+    </header>
     <h1>Legjobbra értékelt tanárok</h1>
     <?php echo $topTable ?>
 
-    <form action="" method="post">
-        <label for="ertekeles">Értékelés:
-            <input type="number" name="ertekeles" id="ertekeles">
-        </label>
-        <label for="tanar">Tanár
-            <input type="text" name="tanar" id="tanar">
-        </label>
-        <button type="submit" name="kereses" id="kereses">Keresés</button>
-        <button type="submit" name="reset" id="reset">Reset</button>
-    </form>
-
-
-    <?php echo $table  ?>
+    <div class="keresesDiv">
+        <form action="" method="post">
+            <div class="keresoMezoDiv"><label for="ertekeles">Értékelés:
+                    <input type="number" name="ertekeles" id="ertekeles">
+                </label>
+                <label for="tanar">Tanár
+                    <input type="text" name="tanar" id="tanar">
+                </label>
+            </div>
+            <div class="buttonsDiv">
+                <button type="submit" name="kereses" id="kereses">Keresés</button>
+                <button type="submit" name="reset" id="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+    <main>
+        <?php echo $table ?>
+    </main>
+    <div class="studentImgDiv"></div>
+    <footer>
+        <ul>
+            <li><a href="login.php">Bejelentkezés</a></li>
+            <li><a href="registration.html">Regisztráció</a></li>
+            <li><a href="#">Főoldal</a></li>
+        </ul>
+        <div class="socialOldalak">
+            <h2>Kövess minket:</h2>
+            <ul>
+                <li><a href="#" class="fa fa-facebook"></a><a href="">Facebook</a></li>
+                <li><a href="#" class="fa fa-linkedin"></a><a href="">Linkedin</a></li>
+                <li><a href="https://github.com/herbakmarcell/afp_mini_project.git" target="_blank"
+                        class="fa fa-github"></a><a href="https://github.com/herbakmarcell/afp_mini_project.git"
+                        target="_blank">Github</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 
 </html>
