@@ -38,35 +38,8 @@ if (isset($_POST['kereses'])) {
         $picture = "./projectImg/manFace.png";
         while ($row = mysqli_fetch_assoc($queryFind)) {
 
-            $table .=
-                "<div class='box'>
-            <img src={$picture} alt='tanar kep' title='tanar kep' width=200px height=200px />
-            <p>{$row["tanar"]}</p>
-            <h3>{$row["nev"]}</h3>
-            <h3>{$row["ertekeles"]}</h3>
-            <a href='informacio.php?id={$row["id"]}'><button type='button'>Információk</button></a>
-        </div>";
-        }
-        $table .= "</div>";
-    } else {
-        $table .= "Nincs ilyen tanár.";
-        $ertekeles = "";
-        $tanar = "";
-    }
-} else {
-    // Összes tanár lekérdezése
-    //Ha nem kattintott rá a keresés gombra.
-    $sql = "SELECT tanarok.vezeteknev as 'vezeteknev', tanarok.keresztnev as 'keresztnev', tanarok.id as 'id', tantargyak.nev as 'nev', round(avg(ertekelesek.ertekeles), 1) as 'ertekeles' FROM `tantargykapcsolotabla` inner join tanarok on tantargykapcsolotabla.tanar_id = tanarok.id inner join ertekelesek on tanarok.id = ertekelesek.tanar_id inner JOIN tantargyak on tantargyak.id = tantargykapcsolotabla.tantargy_id GROUP BY tanarok.vezeteknev, tanarok.keresztnev";
-    $lekerdezes = mysqli_query($conn, $sql);
-
-
-    if (mysqli_num_rows($lekerdezes) > 0) {
-        $picture = "./projectImg/manFace.png";
-        while ($row = mysqli_fetch_assoc($lekerdezes)) {
-
             $ertekelesStyle = $row["ertekeles"] > 0 ? "" : "red";
             $ertekelesStyle = $row["ertekeles"] > 0 ? "projectImg/ratingStar.png" : "projectImg/red_star.png";
-
             $table .=
                 "<div class='box'>
                     <div class=\"tanarPictureDiv\">
@@ -172,15 +145,15 @@ $topTable .= "</div>";
         </a>
         <div class="linkek">
             <ul>
-                <li>
-                    <a href="index.php" class="active"><span id="hazIkon" class="material-symbols-outlined">home</span>Főoldal</a>
-                </li>
-                <li>
-                    <a href="login.php"><span id="loginIkon" class="material-symbols-outlined">login</span>Bejelentkezés</a>
-                </li>
-                <li>
-                    <a href="registration.html"><span id="regIkon" class="material-symbols-outlined">arrow_upward</span>Regisztráció</a>
-                </li>
+                <li><span id="hazIkon" class="material-symbols-outlined">
+                        home
+                    </span><a href="#" class="active">Főoldal</a></li>
+                <li><span id="loginIkon" class="material-symbols-outlined">
+                        login
+                    </span><a href="login.php">Bejelentkezés</a></li>
+                <li><span id="regIkon" class="material-symbols-outlined">
+                        arrow_upward
+                    </span><a href="registration.html">Regisztráció</a></li>
             </ul>
         </div>
     </nav>
@@ -232,7 +205,6 @@ $topTable .= "</div>";
             </ul>
         </div>
     </footer>
-    <script src="script.js"></script>
 </body>
 
 </html>
