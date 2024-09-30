@@ -83,7 +83,8 @@ if (isset($_POST['kereses'])) {
                     <div class=\"tanarInfoDiv\">
                         <h3>{$row["vezeteknev"]} {$row["keresztnev"]}</h3>
                         <h4>{$row["nev"]}</h4>
-                        <p>{$row["ertekeles"]}</p>
+                        <div class=\"ratingDiv\">
+            <img src=\"projectImg/ratingStar.png\" alt=\"ratingStar_img\" class=\"topRatingImg\"><p>{$row["ertekeles"]}</p></div>
                     </div>
                     <div class=\"tanarInfoButton\">
                         <button type='button'><a href='informacio.php?id={$row["id"]}'>Információk</a></button>
@@ -129,6 +130,7 @@ $topTable .= "</div>";
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fooldal.css">
 </head>
 
 <body class="fooldalBody">

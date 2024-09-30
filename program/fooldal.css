@@ -1,0 +1,319 @@
+
+/* Főoldal */
+.fooldalBody
+{
+    overflow-y: scroll;
+    color:white;
+}
+
+.fooldalBody nav ul li
+{
+    position: relative;
+}
+
+.fooldalBody nav ul li a
+{
+    width: 150px;
+}
+
+#hazIkon
+{
+    position: absolute;
+    top:10%;
+    left:10%;
+}
+
+#regIkon
+{
+    position: absolute;
+    top:10%;
+    left:5%;
+}
+
+#loginIkon
+{
+    position: absolute;
+    top:10%;
+    left:-1%;
+}
+
+.fooldalBody h1
+{
+    background-color: var(--kek);
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+header
+{
+    height: 20rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+header figcaption
+{
+    position: absolute;
+    top:50%;
+    left:38%;
+    color:white;
+    font-size: 3.5rem;
+}
+
+header img
+{
+    position: fixed;
+    top:50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.toplistacontainer
+{
+    background-color: var(--vilagoskek);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+.topBox
+{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-right: 4px solid var(--sotetkek);
+    padding:0 10px 0 0;
+    gap:30px;
+}
+
+.topBox:last-child
+{
+    border: none !important;
+}
+.ratingDiv
+{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ratingDiv p
+{
+    color: var(--ratingSarga);
+}
+
+.topRatingImg
+{
+    width: 100%;
+}
+
+.keresesDiv
+{
+    width: 100%;
+    background: var(--sotetkek);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.keresesDiv form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.3rem;
+}
+
+.keresoMezoDiv
+{
+    font-size: 1.3rem;
+    display: flex;
+    gap: 30px;
+}
+
+.keresoMezoDiv input
+{
+    border-radius: 20px;
+    background-color: var(--vilagoskek);
+    border: none;
+    font-size: 1.3rem;
+}
+
+.buttonsDiv
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    gap: 10px;
+}
+
+.buttonsDiv button
+{
+    background-color: var(--vilagoskek);
+    border: none;
+    font-size: 1.3rem;
+    color: white;
+    width: 100%;
+}
+
+.buttonsDiv button:hover
+{
+    cursor: pointer;
+}
+
+main
+{
+    width: 100%;
+    background-color: var(--kek);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tanarContainer
+{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(4,25%);
+    justify-items: center;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.tanarContainer .box
+{
+    background-color: var(--vilagoskek);
+}
+
+.tanarPictureDiv
+{
+    width: 100%;
+    height: 235px;
+    background-color: white;
+}
+
+.tanarPicture
+{
+    width: 100%;
+    height: 100%;
+}
+
+.tanarInfoDiv
+{
+    padding:5px 10px;
+}
+
+.tanarInfoButton
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.tanarInfoButton button
+{
+    padding: 10px;
+    border-radius: 30px;
+    background-color: var(--sotetkek);
+    border:none;
+}
+
+.tanarInfoButton button a
+{
+    text-decoration: none;
+    color:white
+}
+
+.studentImgDiv
+{
+    width: 100%; 
+    height: 20rem;
+}
+
+
+footer
+{
+    width: 100%;
+    background-color: var(--kek);
+    padding: 3rem 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer ul
+{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
+
+footer ul li
+{
+    list-style: none;
+}
+
+footer a
+{
+    color: white;
+    text-decoration: none;
+}
+
+.socialOldalak ul
+{
+    display: flex;
+    gap:10px;
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .fa-github {
+    background: #000000;
+    color: white;
+  }
