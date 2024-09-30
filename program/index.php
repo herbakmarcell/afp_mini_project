@@ -145,15 +145,15 @@ $topTable .= "</div>";
         </a>
         <div class="linkek">
             <ul>
-                <li><span id="hazIkon" class="material-symbols-outlined">
-                        home
-                    </span><a href="#" class="active">Főoldal</a></li>
-                <li><span id="loginIkon" class="material-symbols-outlined">
-                        login
-                    </span><a href="login.php">Bejelentkezés</a></li>
-                <li><span id="regIkon" class="material-symbols-outlined">
-                        arrow_upward
-                    </span><a href="registration.html">Regisztráció</a></li>
+                <li>
+                    <a href="index.php" class="active"><span id="hazIkon" class="material-symbols-outlined">home</span>Főoldal</a>
+                </li>
+                <li>
+                    <a href="login.php"><span id="loginIkon" class="material-symbols-outlined">login</span>Bejelentkezés</a>
+                </li>
+                <li>
+                    <a href="registration.html"><span id="regIkon" class="material-symbols-outlined">arrow_upward</span>Regisztráció</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -205,6 +205,7 @@ $topTable .= "</div>";
             </ul>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
