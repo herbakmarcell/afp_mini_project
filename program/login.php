@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="linkek">
             <ul>
                 <li><a href="login.php" class="active">Bejelentkezés</a></li>
-                <li><a href="registration.html">Regisztráció</a></li>
+                <li><a href="registration.php">Regisztráció</a></li>
             </ul>
         </div>
     </nav>

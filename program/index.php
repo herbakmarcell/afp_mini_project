@@ -69,12 +69,12 @@ if (isset($_POST['kereses'])) {
     // Összes tanár lekérdezése
     //Ha nem kattintott rá a keresés gombra.
     $sql = "SELECT tanarok.vezeteknev as 'vezeteknev', tanarok.keresztnev as 'keresztnev', tanarok.id as 'id', tantargyak.nev as 'nev', round(avg(ertekelesek.ertekeles), 1) as 'ertekeles' FROM `tantargykapcsolotabla` inner join tanarok on tantargykapcsolotabla.tanar_id = tanarok.id inner join ertekelesek on tanarok.id = ertekelesek.tanar_id inner JOIN tantargyak on tantargyak.id = tantargykapcsolotabla.tantargy_id GROUP BY tanarok.vezeteknev, tanarok.keresztnev";
-    $query = mysqli_query($conn, $sql);
+    $lekerdezes = mysqli_query($conn, $sql);
 
 
-    if (mysqli_num_rows($query) > 0) {
+    if (mysqli_num_rows($lekerdezes) > 0) {
         $picture = "./projectImg/manFace.png";
-        while ($row = mysqli_fetch_assoc($query)) {
+        while ($row = mysqli_fetch_assoc($lekerdezes)) {
             $table .=
                 "<div class='box'>
                     <div class=\"tanarPictureDiv\">
