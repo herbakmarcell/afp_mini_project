@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $sor = mysqli_fetch_assoc($eredmeny);
                 $id = $sor['id'];
                 header("Location: http://localhost/afp_mini_project/program/index.php?id=".$id);
-
+                
              
 
             } else {
@@ -51,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     $conn->close();
+    die();
 } else {
     http_response_code(405);
 }
