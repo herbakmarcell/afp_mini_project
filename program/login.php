@@ -34,11 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($jo_adatok == 2) //Az emailnek és a jelszónak is jónak kell lennie
     {
-        if ($eredmeny = $conn->query("select email, jelszo from felhasznalok where email = '" . $email . "' and jelszo = '" . $jelszo . "';")) {
+        if ($eredmeny = $conn->query("select id,email, jelszo from felhasznalok where email = '" . $email . "' and jelszo = '" . $jelszo . "';")) {
             if ($eredmeny->num_rows == 1) { //Talált egy felhasználót
-                $ertek = $eredmeny->fetch_column();
+                $sor = mysqli_fetch_assoc($eredmeny);
+                $id = $sor['id'];
+                header("Location: http://localhost/afp_mini_project/program/index.php?id=".$id);
 
-                echo "A bejelentkezés sikeres";
+             
+
             } else {
                 $hibak[] = "Nem találtunk ilyen felhasználót!";
             }
