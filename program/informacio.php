@@ -2,7 +2,7 @@
 
 include_once("./database.php");
 session_start();
-echo $_SESSION['user_id'];
+$userId = $_SESSION['user_id'];
 $teacherId = $_GET['id'];
 
 $sqlTeacher = "SELECT * FROM tanarok INNER JOIN tantargykapcsolotabla on 
@@ -31,8 +31,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $btnStarRate = $param_name;
     }
 
+    $sql = "select * from ertekelesek where felhasznalo_id ='" . $userId . "' and tanar_id = '" . $teacherId . "';";
+    $queryErtekeles = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($queryErtekeles) > 0) {
+        $sqlInsert = "update ertekelesek set ertekeles = '" . $btnStarRate . "' where felhasznalo_id ='" . $userId . "' and tanar_id = '" . $teacherId . "';";
+    } else {
+        $sqlInsert = "INSERT INTO ertekelesek (`felhasznalo_id`, `tanar_id`, `ertekeles`) VALUES ($userId ,$teacherId, $btnStarRate)";
+    }
 
-    $sqlInsert = "INSERT INTO ertekelesek (`felhasznalo_id`, `tanar_id`, `ertekeles`) VALUES (2 ,$teacherId, $btnStarRate)";
+
     $queryInsert = mysqli_query($conn, $sqlInsert);
 
 
