@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $jelszo_helyes = check_data("jelszo|nem_ures,jelszo_megfelel");
     if ($jelszo_helyes) {
         $jelszo = tisztit($_POST['jelszo']);
+        $jelszo = md5($jelszo);
         $jo_adatok++;
     } else {
         $hibak[] = "A jelszó nem megfelelő";

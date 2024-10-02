@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $jelszo_helyes = check_data('jelszo|nem_ures,jelszo_megfelel');
     if ($jelszo_helyes) {
         $jelszo = tisztit($_POST['jelszo']);
+        $jelszo = md5($jelszo);
         $jo_adatok++;
     } else
         $hibak[] = 'A jelszó nem megfelelő!';
@@ -42,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $jelszo_ujra_helyes = check_data('jelszoujra|nem_ures,jelszo_megfelel');
     if ($jelszo_ujra_helyes) {
         $jelszo_ujra = tisztit($_POST['jelszoujra']);
+        $jelszo_ujra = md5($jelszo_ujra);
         if ($jelszo_ujra != $jelszo)
             $hibak[] = 'A jelszavak nem egyeznek!';
         else
@@ -117,6 +119,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="submit" value="Regisztráció" id="belepes" name="belepes">
                     <p>Már van fiókja? <a href="login.php">Jelentkezzen be!</a></p>
                 </form>
+                <?php foreach ($hibak as $hiba): ?>
+                    <p class="hibauzenet"><?= $hiba ?></p>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
