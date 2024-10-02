@@ -60,14 +60,19 @@ header img
 {
     height: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.4rem;
     border-right: 4px solid var(--sotetkek);
     padding:0 10px 0 0;
-    gap:30px;
 }
+
+.topBox p
+{
+    text-align: center;
+}
+
 
 .topBox:last-child
 {
@@ -118,12 +123,14 @@ header img
     gap: 30px;
 }
 
-.keresoMezoDiv input
+.keresoMezoDiv input, .keresesDiv select
 {
     border-radius: 20px;
     background-color: var(--vilagoskek);
     border: none;
     font-size: 1.3rem;
+    width: 200px;
+    text-align: center;
 }
 
 .buttonsDiv
@@ -167,11 +174,14 @@ main
     justify-items: center;
     align-items: center;
     padding: 10px 50px;
+    gap:20px;
 }
 
 .tanarContainer .box
 {
     background-color: var(--vilagoskek);
+    box-shadow: 16px 11px 9px var(--sotetkek);
+    border:5px solid var(--vilagoskek);
 }
 
 .tanarPictureDiv
@@ -225,7 +235,7 @@ footer
 {
     width: 100%;
     background-color: var(--kek);
-    padding: 3rem 10rem;
+    padding: 2.1rem 10rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
