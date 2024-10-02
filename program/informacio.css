@@ -1,0 +1,63 @@
+body{
+    background-color: var(--vilagoskek);
+}
+
+main
+{
+    display: grid;
+    grid-template-columns: repeat(2,45%);
+    background:none;
+    padding: 60px;
+    gap:50px;
+}
+
+.tanarInfoDiv, .tanarErtekeloDiv
+{
+    box-shadow: 16px 11px 9px var(--sotetkek);
+    padding:30px;
+    background-color: var(--sotetkek);
+
+}
+
+.tanarInfoDiv
+{
+    display: grid;
+    grid-template-columns: repeat(2,40%);
+    justify-content: space-around;
+}
+
+.tanarErtekeloDiv
+{
+    height: 100%;
+}
+
+.tanarInfoDiv .tanarPictureDiv img
+{
+    width: 100%;
+}
+
+.tanarInfoForm
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.tanarInfoDiv button
+{
+    background: none;
+    width: 40px;
+    height: 40px;
+    border:none;
+}
+
+.tanarInfoDiv button:hover
+{
+    cursor: pointer;
+}
+
+.tanarInfoDiv button img
+{
+    width: 100%;
+}

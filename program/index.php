@@ -9,7 +9,9 @@ include_once("database.php");
 session_start();
 $ki_vagy_bejelentkezes;
 if (isset($_SESSION["user_id"])) {
-    $ki_vagy_bejelentkezes = '<li><a href="./logout.php"><span>Kijelentkezés</span></a></li>';
+    $ki_vagy_bejelentkezes = '<li><a href="./logout.php"><span class="material-symbols-outlined">
+logout
+</span>Kijelentkezés</a></li>';
 } else {
     $ki_vagy_bejelentkezes = '  <li>
                     <a href="login.php"><span id="loginIkon"
@@ -184,7 +186,7 @@ $topTable .= "</div>";
                     <?php echo $tantargy; ?>
                 </select></label>
             <div class="keresoMezoDiv"><label for="ertekeles">Értékelés:
-                    <input type="number" name="ertekeles" id="ertekeles">
+                    <input type="number" name="ertekeles" id="ertekeles" min="1" max="5">
                 </label>
                 <label for="tanar">Tanár
                     <input type="text" name="tanar" id="tanar">
@@ -203,7 +205,7 @@ $topTable .= "</div>";
     <footer>
         <ul>
             <li><a href="login.php">Bejelentkezés</a></li>
-            <li><a href="registration.html">Regisztráció</a></li>
+            <li><a href="registration.php">Regisztráció</a></li>
             <li><a href="#">Főoldal</a></li>
         </ul>
         <div class="socialOldalak">
