@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="projectImg/login-favicon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Bejelentkezés</title>
@@ -15,6 +16,7 @@ $hibak = [];
 
 require './functions.php';
 require './database.php';
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -40,10 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($eredmeny = $conn->query("select id,email, jelszo from felhasznalok where email = '" . $email . "' and jelszo = '" . $jelszo . "';")) {
             if ($eredmeny->num_rows == 1) { //Talált egy felhasználót
                 $sor = mysqli_fetch_assoc($eredmeny);
-                $id = $sor['id'];
-                header("Location: http://localhost/afp_mini_project/program/index.php?id=".$id);
-                
-             
+                $_SESSION["user_id"] = $sor['id'];
+
+                header("Location: http://localhost/afp_mini_project/program/index.php");
 
             } else {
                 $hibak[] = "Nem találtunk ilyen felhasználót!";
@@ -54,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     $conn->close();
-   
+
 } else {
     http_response_code(405);
 }
@@ -76,10 +77,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <a href="index.php"><span id="hazIkon" class="material-symbols-outlined">home</span>Főoldal</a>
                 </li>
                 <li>
-                    <a href="login.php" class="active"><span id="loginIkon" class="material-symbols-outlined">login</span>Bejelentkezés</a>
+                    <a href="login.php" class="active"><span id="loginIkon"
+                            class="material-symbols-outlined">login</span>Bejelentkezés</a>
                 </li>
                 <li>
-                    <a href="registration.php"><span id="regIkon" class="material-symbols-outlined">arrow_upward</span>Regisztráció</a>
+                    <a href="registration.php"><span id="regIkon"
+                            class="material-symbols-outlined">arrow_upward</span>Regisztráció</a>
                 </li>
             </ul>
         </div>

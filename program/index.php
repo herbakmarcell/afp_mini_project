@@ -6,7 +6,20 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include_once("database.php");
-
+session_start();
+$ki_vagy_bejelentkezes;
+if (isset($_SESSION["user_id"])) {
+    $ki_vagy_bejelentkezes = '<li><a href="./logout.php"><span>Kijelentkezés</span></a></li>';
+} else {
+    $ki_vagy_bejelentkezes = '  <li>
+                    <a href="login.php"><span id="loginIkon"
+                            class="material-symbols-outlined">login</span>Bejelentkezés</a>
+                </li>
+                <li>
+                    <a href="registration.php"><span id="regIkon"
+                            class="material-symbols-outlined">arrow_upward</span>Regisztráció</a>
+                </li>';
+}
 $table = "<div class='tanarContainer'>";
 
 
@@ -58,9 +71,9 @@ if (isset($_POST['kereses'])) {
         }
         $table .= "</div>";
 
-    $tantargyak = "";
-    $ertekelesek = 0;
-    $tanarok = "";
+        $tantargyak = "";
+        $ertekelesek = 0;
+        $tanarok = "";
     } else {
         $table .= "Nincs ilyen tanár.";
         $tantargyak = "";
@@ -129,7 +142,8 @@ $topTable .= "</div>";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Főoldal</title>
     <link rel="icon" type="image/x-icon" href="projectImg/home-favicon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fooldal.css">
@@ -146,14 +160,12 @@ $topTable .= "</div>";
         <div class="linkek">
             <ul>
                 <li>
-                    <a href="index.php" class="active"><span id="hazIkon" class="material-symbols-outlined">home</span>Főoldal</a>
+                    <a href="index.php" class="active"><span id="hazIkon"
+                            class="material-symbols-outlined">home</span>Főoldal</a>
                 </li>
-                <li>
-                    <a href="login.php"><span id="loginIkon" class="material-symbols-outlined">login</span>Bejelentkezés</a>
-                </li>
-                <li>
-                    <a href="registration.php"><span id="regIkon" class="material-symbols-outlined">arrow_upward</span>Regisztráció</a>
-                </li>
+
+                <?php echo $ki_vagy_bejelentkezes ?>
+
             </ul>
         </div>
     </nav>
@@ -169,7 +181,7 @@ $topTable .= "</div>";
             <label for="tantargy">Tantárgy:
                 <select name='tantargy'>
                     <option>--- Válassz ---</option>
-                    <?php echo $tantargy;  ?>
+                    <?php echo $tantargy; ?>
                 </select></label>
             <div class="keresoMezoDiv"><label for="ertekeles">Értékelés:
                     <input type="number" name="ertekeles" id="ertekeles">

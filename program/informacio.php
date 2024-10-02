@@ -1,7 +1,8 @@
-<?php 
+<?php
 
 include_once("./database.php");
-
+session_start();
+echo $_SESSION['user_id'];
 $teacherId = $_GET['id'];
 
 $sqlTeacher = "SELECT * FROM tanarok INNER JOIN tantargykapcsolotabla on 
@@ -10,13 +11,13 @@ $queryTeacher = mysqli_query($conn, $sqlTeacher);
 
 $table = "<div>";
 $starBtn = "";
-if(mysqli_num_rows($queryTeacher) > 0){
-   while($row = mysqli_fetch_assoc($queryTeacher)){
+if (mysqli_num_rows($queryTeacher) > 0) {
+    while ($row = mysqli_fetch_assoc($queryTeacher)) {
         $table .= "
           <h2>{$row["vezeteknev"]} {$row["keresztnev"]}</h2>
           <p>{$row["nev"]}</p>
         ";
-   } 
+    }
 }
 $table .= "</div>";
 
@@ -24,13 +25,13 @@ $btnStarRate = "";
 
 
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach ($_POST as $param_name => $param_val) {
-        
+
         $btnStarRate = $param_name;
     }
-    
-    
+
+
     $sqlInsert = "INSERT INTO ertekelesek (`felhasznalo_id`, `tanar_id`, `ertekeles`) VALUES (2 ,$teacherId, $btnStarRate)";
     $queryInsert = mysqli_query($conn, $sqlInsert);
 
@@ -38,8 +39,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $sqlAvg = "SELECT round(AVG(ertekeles), 1) as 'atlag' FROM ertekelesek GROUP BY tanar_id HAVING tanar_id = $teacherId";
     $queryAvg = mysqli_query($conn, $sqlAvg);
 
-    if(mysqli_num_rows($queryAvg) > 0){
-        while($row = mysqli_fetch_assoc($queryAvg)){
+    if (mysqli_num_rows($queryAvg) > 0) {
+        while ($row = mysqli_fetch_assoc($queryAvg)) {
             $sqlUpdate = "UPDATE tanarok
             SET atlag = {$row["atlag"]}
             WHERE id = $teacherId";
@@ -52,26 +53,29 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="projectImg/info-favicon.png">
     <title>Tanár oldal</title>
 </head>
+
 <body>
     <form action="" method="post">
-        <?php echo $table;  ?>
+        <?php echo $table; ?>
 
-    <?php 
-    
+        <?php
 
-    
-    ?>
-    <button type="submit" id="1" name="1" > <img src="projectImg/ratingStar.png" alt=""> </button>
-    <button type="submit" id="2" name="2"> <img src="projectImg/ratingStar.png" alt=""> </button>
-    <button type="submit" id="3" name="3"> <img src="projectImg/ratingStar.png" alt=""> </button>
-    <button type="submit" id="4" name="4" > <img src="projectImg/ratingStar.png" alt=""> </button>
-    <button type="submit" id="5" name="5"> <img src="projectImg/ratingStar.png" alt=""> </button>
+
+
+        ?>
+        <button type="submit" id="1" name="1"> <img src="projectImg/ratingStar.png" alt=""> </button>
+        <button type="submit" id="2" name="2"> <img src="projectImg/ratingStar.png" alt=""> </button>
+        <button type="submit" id="3" name="3"> <img src="projectImg/ratingStar.png" alt=""> </button>
+        <button type="submit" id="4" name="4"> <img src="projectImg/ratingStar.png" alt=""> </button>
+        <button type="submit" id="5" name="5"> <img src="projectImg/ratingStar.png" alt=""> </button>
     </form>
 </body>
+
 </html>

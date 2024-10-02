@@ -52,24 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($jo_adatok == 4) {
 
-        //Utolsó id lekérdezése
-        $lekerdezes = "select max(id) from felhasznalok;";
-        if ($eredmeny = $conn->query($lekerdezes)) {
-            $id = $eredmeny->fetch_column();
-            $id++;
-
-
-        }
-
-
-
 
         $lekerdezes = "select * from felhasznalok where email = '" . $email . "';";
         if ($eredmeny = $conn->query($lekerdezes)) {
             if ($eredmeny->num_rows > 0) {
                 $hibak[] = 'Már szerepel felhasználó a megadott email címmel!';
             } else {
-                $lekerdezes = "insert into felhasznalok (id,nev,email,jelszo) values (" . $id . ",'" . $felhasznalonev . "','" . $email . "','" . $jelszo . "');";
+                $lekerdezes = "insert into felhasznalok (nev,email,jelszo) values ('" . $felhasznalonev . "','" . $email . "','" . $jelszo . "');";
                 if ($eredmeny = $conn->query($lekerdezes)) {
                     header("Location: http://localhost/afp_mini_project/program/login.php");
                 }
