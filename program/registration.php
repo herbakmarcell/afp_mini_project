@@ -117,7 +117,7 @@ require_once './functions.php';
                     <a href="login.php"><span id="loginIkon" class="material-symbols-outlined">login</span>Bejelentkezés</a>
                 </li>
                 <li>
-                    <a href="registration.html" class="active"><span id="regIkon" class="material-symbols-outlined">arrow_upward</span>Regisztráció</a>
+                    <a href="registration.php" class="active"><span id="regIkon" class="material-symbols-outlined">arrow_upward</span>Regisztráció</a>
                 </li>
             </ul>
         </div>
