@@ -1,0 +1,79 @@
+:root {
+    --kek: #0E65B5;
+    --vilagoskek: #2C98FB;
+    --sotetkek: #00396E;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+}
+.container{
+    width: 100%;
+    padding: 20px 0;
+    background-image: url('projectImg/bejelentkezo_oldal_teljes.jpg');
+    background-size: cover;
+    background-position: 10% 70%;
+    background-repeat: no-repeat;
+}
+.keret {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.149);
+    width: 60%;
+    min-width: 350px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px rgba(79, 79, 79, 0.9);
+}
+h1 {
+    text-align: center;
+    width: 100%;
+    margin: 20px 0;
+    color: white;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+label {
+    display: block;
+    margin: 20px 0 5px 0;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+input{
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid var(--sotetkek);
+    box-sizing: border-box;
+    color: var(--kek);
+}
+input:focus{
+    outline: 2px solid var(--sotetkek);
+    border: none;
+}
+select {
+    width: 100%;
+    font-size: 16px;
+    color: var(--kek);
+    outline: none;
+}
+option{
+    border: 1px solid rgb(227, 227, 227);
+    text-align: center;
+    padding: 5px;
+}
+#hozzaadas {
+    background-color: var(--kek);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    margin: 10px 0;
+}
+#hozzaadas:hover {
+    background-color: var(--sotetkek);
+}

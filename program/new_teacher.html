@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="projectImg/addt_favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="new_teacher.css">
+    <title>Új Tanár Felvétele</title>
+</head>
+<body>
+    <nav>
+        <p class="title"><a href="index.php">Tanár értékelő</a></p>
+        <a href="#" class="hmenu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="linkek">
+            <ul>
+                <li>
+                    <a href="index.php"><span class="material-symbols-outlined">arrow_back</span>Vissza</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="keret">
+            <h1>Új Tanár Felvétele</h1>
+            <form method="POST" action="">
+                <label for="vezeteknev">Vezetéknév:</label>
+                <input type="text" id="vezeteknev" name="vezeteknev" required>
+
+                <label for="keresztnev">Keresztnév:</label>
+                <input type="text" id="keresztnev" name="keresztnev" required>
+                
+                <label for="tantargyak">Tantárgyak:</label>
+                <select id="tantargyak" name="tantargyak" required multiple size="6">
+                    <option value="1">pelda1</option>
+                    <option value="2">pelda2</option>
+                    <option value="3">pelda3</option>
+                    <option value="4">pelda4</option>
+                    <option value="5">pelda5</option>
+                    <option value="6">pelda6</option>
+                    <option value="7">pelda7</option>
+                    <option value="8">pelda8</option>
+                </select>
+
+                <input type="submit" value="Hozzáadás" id="hozzaadas" name="hozzaadas">
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
