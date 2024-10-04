@@ -41,6 +41,7 @@ main
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    
 }
 
 
@@ -60,4 +61,11 @@ main
 .tanarInfoDiv button img
 {
     width: 100%;
+}
+.tanarInfoData h3 {
+    color: #0E65B5;
+    font-weight: 900;
+}
+.tanarInfoData p{
+    color: #2C98FB;
 }

@@ -2,20 +2,21 @@
 
 include_once("./database.php");
 session_start();
-$userId = $_SESSION['user_id'];
+$userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 0;
+
 $teacherId = $_GET['id'];
 
 $sqlTeacher = "SELECT * FROM tanarok INNER JOIN tantargykapcsolotabla on tantargykapcsolotabla.tanar_id = tanarok.id INNER JOIN tantargyak on tantargykapcsolotabla.tantargy_id = tantargyak.id GROUP BY tanarok.vezeteknev, tanarok.keresztnev, nev HAVING tanarok.id = $teacherId";
 $queryTeacher = mysqli_query($conn, $sqlTeacher);
 
-$table = "<div>";
+$table = "<div class='tanarInfoData'>";
 $starBtn = "";
 if (mysqli_num_rows($queryTeacher) > 0) {
     while ($row = mysqli_fetch_assoc($queryTeacher)) {
         $table .= "
-          <h3>Név: {$row["vezeteknev"]} {$row["keresztnev"]}</h3>
+          <h3 >Név: {$row["vezeteknev"]} {$row["keresztnev"]}</h3>
           <p>Tantárgy: {$row["nev"]}</p>
-          <p>Átlag értékelés: {$row["atlag"]}</p>
+          <p>Átlag értékelés: <span style='color: yellow'>{$row["atlag"]}<span></p>
         ";
     }
 }
@@ -54,6 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $queryUpdate = mysqli_query($conn, $sqlUpdate);
     }
+    // oldal frissítése
+    header("Refresh:0");
 }
 
 
@@ -101,13 +104,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="tanarInfoForm">
                 <?php echo $table; ?>
                 <form action="" method="post">
-
-
-                    <button type="submit" id="1" name="1"> <img src="projectImg/ratingStar.png" alt=""> </button>
-                    <button type="submit" id="2" name="2"> <img src="projectImg/ratingStar.png" alt=""> </button>
-                    <button type="submit" id="3" name="3"> <img src="projectImg/ratingStar.png" alt=""> </button>
-                    <button type="submit" id="4" name="4"> <img src="projectImg/ratingStar.png" alt=""> </button>
-                    <button type="submit" id="5" name="5"> <img src="projectImg/ratingStar.png" alt=""> </button>
+                    <?php 
+                    
+                    if(isset($_SESSION['user_id'])){
+                    ?>
+                        <button type="submit" id="1" name="1" > <img src="projectImg/ratingStar.png" alt=""> </button>
+                        <button type="submit" id="2" name="2"> <img src="projectImg/ratingStar.png" alt=""> </button>
+                        <button type="submit" id="3" name="3" > <img src="projectImg/ratingStar.png" alt=""> </button>
+                        <button type="submit" id="4" name="4" > <img src="projectImg/ratingStar.png" alt=""> </button>
+                        <button type="submit" id="5" name="5" > <img src="projectImg/ratingStar.png" alt=""> </button>
+                    <?php 
+                    
+                    }else{
+                        echo "<div class='tanarInfoData'><h3>Az értékeléshez jelentkezzen be.<h3></div>";
+                    }
+                    
+                    
+                    ?>
                 </form>
             </div>
         </div>
