@@ -218,6 +218,7 @@ if(isset($_SESSION['user_id'])){
             </ul>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
