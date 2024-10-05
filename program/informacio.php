@@ -2,7 +2,16 @@
 
 include_once("./database.php");
 session_start();
-$userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 0;
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+$userId = "";
+if(isset($_SESSION['user_id'])){
+    $userId = $_SESSION['user_id'];
+}
 
 $teacherId = $_GET['id'];
 
@@ -26,7 +35,7 @@ $btnStarRate = "";
 
 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($_POST['kuldes'])) {
     foreach ($_POST as $param_name => $param_val) {
 
         $btnStarRate = $param_name;
@@ -55,8 +64,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $queryUpdate = mysqli_query($conn, $sqlUpdate);
     }
+
+
+    
+
+
     // oldal frissítése
     header("Refresh:0");
+}
+
+
+$sqlKommentSelect = "SELECT nev, komment, ido FROM tanarok INNER JOIN kommentek ON tanarok.id = kommentek.tanar_id INNER JOIN felhasznalok ON kommentek.felhasznalo_id = felhasznalok.id WHERE tanarok.id = $teacherId";
+
+$queryKommentS = mysqli_query($conn, $sqlKommentSelect);
+
+    $komment = "<div>";
+    if (mysqli_num_rows($queryKommentS) > 0) {
+        while ($row = mysqli_fetch_assoc($queryKommentS)) {
+            $komment .= "<h2> {$row['nev']}</h2>
+            <p>{$row['ido']}</p>
+            <h3>{$row['komment']}</h3>
+            ";
+    }
+    $komment .= "</div>";
+}else{
+    $komment .= "Ehhez a tanárhoz még nem érkezett komment.";
+}
+
+if(isset($_POST['kuldes']) && !empty($_POST['kuldes'])){
+
+    $komment = $_POST['komment'];
+
+    $ido = date("Y-m-d h:i:sa");
+
+    $kommentSql = "INSERT INTO kommentek (`felhasznalo_id`, `tanar_id`, `komment`, `ido`) VALUES ($userId, $teacherId, '".$komment."', '$ido')";
+    $querykomment = mysqli_query($conn, $kommentSql);
+
+    header("Refresh:0");
+    
 }
 
 
@@ -125,14 +170,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
         <div class="tanarErtekeloDiv">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi itaque harum quidem non illo, doloremque
-            amet doloribus qui cupiditate nobis esse maxime labore eius fugiat sequi veniam quo corporis. Tenetur.
-            Culpa quia cum quis, perferendis molestiae placeat repellat nobis. Cupiditate, eveniet vero! Magnam nesciunt
-            aspernatur reprehenderit nostrum praesentium laboriosam dolorum, molestias, officiis magni facere ullam
-            veniam! Eaque minus maiores hic?
-            Dolorem omnis asperiores, hic nihil quibusdam quasi natus molestiae veniam saepe illo animi aliquid ratione
-            ea tempore pariatur vitae blanditiis reprehenderit ad architecto fuga. Praesentium dicta eveniet pariatur
-            consequuntur a.
+            <div class="comment">
+                <?php  echo $komment; ?>
+            </div>
+            <h3>Komment szekció</h3>
+            <form action="" method="post">
+                <textarea style="resize:none" rows="4" cols="40" name="komment" id="komment"></textarea>
+                <button type="submit" name="kuldes" id="kuldes" value="Küldés">Küldés</button>
+            </form>
         </div>
     </main>
     <footer>
