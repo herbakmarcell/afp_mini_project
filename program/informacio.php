@@ -74,21 +74,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($_POST['kuldes'])) {
 }
 
 
-$sqlKommentSelect = "SELECT nev, komment, ido FROM tanarok INNER JOIN kommentek ON tanarok.id = kommentek.tanar_id INNER JOIN felhasznalok ON kommentek.felhasznalo_id = felhasznalok.id WHERE tanarok.id = $teacherId";
+$sqlKommentSelect = "SELECT nev, komment, ido FROM tanarok INNER JOIN kommentek ON tanarok.id = kommentek.tanar_id INNER JOIN felhasznalok ON kommentek.felhasznalo_id = felhasznalok.id WHERE tanarok.id = $teacherId ORDER BY ido DESC";
 
 $queryKommentS = mysqli_query($conn, $sqlKommentSelect);
 
-    $komment = "<div>";
+    $komment = "";
     if (mysqli_num_rows($queryKommentS) > 0) {
         while ($row = mysqli_fetch_assoc($queryKommentS)) {
-            $komment .= "<h2> {$row['nev']}</h2>
-            <p>{$row['ido']}</p>
-            <h3>{$row['komment']}</h3>
-            ";
+            $komment .= "<div class=\"comment\"><h2 class=\"nev\"> {$row['nev']}</h2>
+            <p class=\"ido\">{$row['ido']}</p>
+            <p class=\"szoveg\">{$row['komment']}</p>
+            </div>";
     }
-    $komment .= "</div>";
+    $komment .= "";
 }else{
-    $komment .= "Ehhez a tanárhoz még nem érkezett komment.";
+    $komment .= "<p>Ehhez a tanárhoz még nem érkezett komment.</p>";
 }
 
 
@@ -99,7 +99,7 @@ if(isset($_SESSION['user_id'])){
         
         $komment = $_POST['komment'];
         
-        $ido = date("Y-m-d h:i:sa");
+        $ido = date("Y-m-d H:i:s");
         
         $kommentSql = "INSERT INTO kommentek (`felhasznalo_id`, `tanar_id`, `komment`, `ido`) VALUES ($userId, $teacherId, '".$komment."', '$ido')";
         $querykomment = mysqli_query($conn, $kommentSql);
@@ -151,7 +151,7 @@ if(isset($_SESSION['user_id'])){
     </nav>
     <main>
         <div class="tanarInfoDiv">
-            <div class="tanarPictureDiv\">
+            <div class="tanarPictureDiv">
                 <img src=./projectImg/manFace.png alt='tanar kep' title='tanar kep' class="tanarPicture" />
             </div>
             <div class="tanarInfoForm">
@@ -178,10 +178,10 @@ if(isset($_SESSION['user_id'])){
             </div>
         </div>
         <div class="tanarErtekeloDiv">
-            <div class="comment">
+            <h3>Komment szekció</h3>
+            <div class="comments">
                 <?php  echo $komment; ?>
             </div>
-            <h3>Komment szekció</h3>
             <form action="" method="post">
                 <?php 
                 
@@ -190,7 +190,7 @@ if(isset($_SESSION['user_id'])){
                 
                 
                 ?>
-                <textarea style="resize:none" rows="4" cols="40" name="komment" id="komment"></textarea>
+                <textarea style="resize:none" rows="3" cols="40" name="komment" id="komment"></textarea>
                 <button type="submit" name="kuldes" id="kuldes" value="Küldés">Küldés</button>
                 <?php 
                 }else{

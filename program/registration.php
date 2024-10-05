@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 $lekerdezes = "insert into felhasznalok (nev,email,jelszo) values ('" . $felhasznalonev . "','" . $email . "','" . $jelszo . "');";
                 if ($eredmeny = $conn->query($lekerdezes)) {
-                    header("Location: http://localhost/afp_mini_project/program/login.php");
+                    header("Location: login.php");
                 }
             }
         }

@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $sor = mysqli_fetch_assoc($eredmeny);
                 $_SESSION["user_id"] = $sor['id'];
 
-                header("Location: http://localhost/afp_mini_project/program/index.php");
+                header("Location: index.php");
 
             } else {
                 $hibak[] = "Nem találtunk ilyen felhasználót!";

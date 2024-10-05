@@ -1,5 +1,12 @@
+:root {
+    --kek: #0E65B5;
+    --vilagoskek: #2C98FB;
+    --sotetkek: #00396E;
+    --ratingSarga: #ffc300;
+}
 body{
     background-color: var(--vilagoskek);
+    overflow-y: scroll;
 }
 
 main
@@ -7,16 +14,13 @@ main
     display: grid;
     grid-template-columns: repeat(2,45%);
     background:none;
-    padding: 60px;
     gap:50px;
 }
 
 .tanarInfoDiv, .tanarErtekeloDiv
 {
     box-shadow: 16px 11px 9px var(--sotetkek);
-    padding:30px;
     background-color: var(--sotetkek);
-
 }
 
 .tanarInfoDiv
@@ -24,16 +28,18 @@ main
     display: grid;
     grid-template-columns: repeat(2,40%);
     justify-content: space-around;
+    margin: 60px 5px;
+    padding: 30px;
 }
 
-.tanarErtekeloDiv
-{
+.tanarInfoDiv .tanarPictureDiv{
+    background-color: var(--sotetkek);
     height: 100%;
 }
-
 .tanarInfoDiv .tanarPictureDiv img
 {
     width: 100%;
+    height: auto;
 }
 
 .tanarInfoForm
@@ -68,4 +74,168 @@ main
 }
 .tanarInfoData p{
     color: #2C98FB;
+}
+
+/* Komment */
+.tanarErtekeloDiv
+{
+    padding: 0 15px;
+    margin: 30px 0;
+    height: 570px;
+}
+.tanarErtekeloDiv h3{
+    margin: 10px 0;
+    text-align: center;
+    color: var(--vilagoskek);
+}
+
+.comments {
+    padding: 15px;
+    background-color: #f0f8ff;
+    overflow-y: auto;
+    height: 440px;
+    border: 1px solid #d1e7ff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comments::-webkit-scrollbar{
+    width: 10px;
+}
+  
+.comments::-webkit-scrollbar-track{
+    background-color: rgb(166, 166, 166);
+    border-radius: 10px;
+}
+  
+.comments::-webkit-scrollbar-thumb{
+    background-color: var(--kek);
+    border-radius: 10px;
+}
+  
+.comments::-webkit-scrollbar-thumb:hover{
+    background-color: var(--sotetkek);
+}
+
+.comment {
+    position: relative;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid #d1e7ff;
+    border-radius: 8px;
+}
+
+.comment .nev {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.comment .ido {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+}
+
+.comment .szoveg {
+    font-size: 15px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.tanarErtekeloDiv form {
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.tanarErtekeloDiv form textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #d1e7ff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    outline: none;
+}
+.tanarErtekeloDiv form textarea:focus{
+    outline: 2px solid var(--kek);
+}
+
+.tanarErtekeloDiv form button {
+    background-color: var(--kek);
+    width: 70px;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tanarErtekeloDiv form button:hover {
+    background-color: var(--sotetkek);
+    border: 1px solid var(--kek);
+}
+/* komment vége */
+@media (max-width: 1040px){
+    main{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .tanarInfoDiv{
+        margin: 10px;
+    }
+}
+@media (max-width: 650px){
+    footer{
+        display: flex;
+        flex-direction: column;
+        padding: 30px 10px;
+    }
+    footer ul{
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .socialOldalak{
+        margin: 20px 0;
+    }
+    footer .socialOldalak ul li{
+        margin: 10px 0;
+    }
+}
+@media (max-width: 470px){
+    .tanarInfoDiv{
+        padding: 10px 5px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: unset;
+    }
+    .tanarPictureDiv{
+        width: 30%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: yellow;
+        padding: 5px;
+    }
+    .tanarInfoForm{
+        width: 70%;
+        padding: 0 10px;
+    }
 }
