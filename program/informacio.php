@@ -91,19 +91,27 @@ $queryKommentS = mysqli_query($conn, $sqlKommentSelect);
     $komment .= "Ehhez a tanárhoz még nem érkezett komment.";
 }
 
-if(isset($_POST['kuldes']) && !empty($_POST['kuldes'])){
 
-    $komment = $_POST['komment'];
-
-    $ido = date("Y-m-d h:i:sa");
-
-    $kommentSql = "INSERT INTO kommentek (`felhasznalo_id`, `tanar_id`, `komment`, `ido`) VALUES ($userId, $teacherId, '".$komment."', '$ido')";
-    $querykomment = mysqli_query($conn, $kommentSql);
-
-    header("Refresh:0");
+$kommentRegisztracio = "";
+if(isset($_SESSION['user_id'])){
+   
+    if(isset($_POST['kuldes']) && !empty($_POST['kuldes'])){
+        
+        $komment = $_POST['komment'];
+        
+        $ido = date("Y-m-d h:i:sa");
+        
+        $kommentSql = "INSERT INTO kommentek (`felhasznalo_id`, `tanar_id`, `komment`, `ido`) VALUES ($userId, $teacherId, '".$komment."', '$ido')";
+        $querykomment = mysqli_query($conn, $kommentSql);
+        
+        header("Refresh:0");
+        
+    }
     
+}else{
+    $kommentRegisztracio = "A kommenteléshez be kell jelentkezni.";
+        
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -175,8 +183,21 @@ if(isset($_POST['kuldes']) && !empty($_POST['kuldes'])){
             </div>
             <h3>Komment szekció</h3>
             <form action="" method="post">
+                <?php 
+                
+                if(empty($kommentRegisztracio)){
+
+                
+                
+                ?>
                 <textarea style="resize:none" rows="4" cols="40" name="komment" id="komment"></textarea>
                 <button type="submit" name="kuldes" id="kuldes" value="Küldés">Küldés</button>
+                <?php 
+                }else{
+                    echo $kommentRegisztracio;
+                }
+                
+                ?>
             </form>
         </div>
     </main>
