@@ -10,8 +10,12 @@ session_start();
 $ki_vagy_bejelentkezes;
 if (isset($_SESSION["user_id"])) {
     $ki_vagy_bejelentkezes = '<li><a href="./logout.php"><span class="material-symbols-outlined">
-logout
-</span>Kijelentkezés</a></li>';
+    logout
+    </span>Kijelentkezés</a></li>
+    <li><a href="./new_teacher.php"><span class="material-symbols-outlined">
+add_circle
+</span>Új tanár felvitele</a></li>
+';
 } else {
     $ki_vagy_bejelentkezes = '  <li>
                     <a href="login.php"><span id="loginIkon"
@@ -20,7 +24,9 @@ logout
                 <li>
                     <a href="registration.php"><span id="regIkon"
                             class="material-symbols-outlined">arrow_upward</span>Regisztráció</a>
-                </li>';
+                </li>
+                
+                ';
 }
 $table = "<div class='tanarContainer'>";
 
@@ -207,6 +213,14 @@ $topTable .= "</div>";
             <li><a href="login.php">Bejelentkezés</a></li>
             <li><a href="registration.php">Regisztráció</a></li>
             <li><a href="#">Főoldal</a></li>
+            <?php 
+            
+
+            if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
+                echo "<li><a href='new_teacher.php'>Új tanár felvitele</a></li>";
+            }
+
+            ?>
         </ul>
         <div class="socialOldalak">
             <h2>Kövess minket:</h2>
