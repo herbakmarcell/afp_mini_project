@@ -30,13 +30,13 @@ Az oktatókat a hallgatók tudják értékelni 1-5-ig számokkal amelyeket az ad
 |Funkció                  | Feladat                   | Prioritás | Becslés (nap) | Aktuális becslés (nap) | Eltelt idő (nap) | Határidő (nap) |
 |-------------------------|---------------------------|-----------|---------------|------------------------|------------------|---------------------|
 |Követelmény specifikáció |Megírás                    |         1 |             2 |                      2 |                1 |                   2 |
-|Funkcionális specifikáció|Megírás                    |         1 |             2 |                      2 |                0 |                   2 |
-|Rendszerterv             |Megírás                    |         1 |             2 |                      2 |                0 |                   2 |
-|Program                  |Vizuális tervek elkészítése|         2 |             1 |                      0 |                0 |                   1 |
-|Program                  |Prototípus elkészítése     |         3 |             3 |                      0 |                0 |                   3 |
-|Program                  |Alapfunkciók elkészítése   |         3 |             5 |                      0 |                0 |                   5 |
-|Program                  |Extra funkciók elkészítése |         3 |             3 |                      0 |                0 |                   3 |
-|Program                  |Tesztelés                  |         4 |             2 |                      0 |                0 |                   2 |
+|Funkcionális specifikáció|Megírás                    |         1 |             2 |                      2 |                2 |                   2 |
+|Rendszerterv             |Megírás                    |         1 |             2 |                      2 |                2 |                   2 |
+|Program                  |Vizuális tervek elkészítése|         2 |             1 |                      2 |                2 |                   2 |
+|Program                  |Prototípus elkészítése     |         3 |             3 |                      3 |                3 |                   3 |
+|Program                  |Alapfunkciók elkészítése   |         3 |             5 |                      4 |                4 |                   5 |
+|Program                  |Extra funkciók elkészítése |         3 |             3 |                      3 |                3 |                   3 |
+|Program                  |Tesztelés                  |         4 |             2 |                      1 |                1 |                   2 |
 ### 2.4 Mérföldkövek
    * 09.19 Követelményspecifikáció elkészítve
    * - Funkcionális specifikáció elkészítve
