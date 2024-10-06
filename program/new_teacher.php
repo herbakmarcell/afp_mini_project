@@ -40,7 +40,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             $hibak[] = "A keresztnév nem megfelelő";
         
 
-        $tantargyak = ['Blank','Kalkulus','Programozás','példa3','példa4','példa5','példa6', 'példa7', 'példa8'];
+        $tantargyak = ['Blank','Kalkulus','Programozás','Rendszerfejlesztés','Diszkrét Matematika','SOP','Algoritmusok', 'Bibliaismeret', 'Testnevelés'];
         $tantargy_helyes = check_data("tantargyak|nem_ures");
         if($tantargy_helyes)
         {
@@ -136,12 +136,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                 <select id="tantargyak" name="tantargyak" required multiple size="6">
                     <option value="1">Kalkulus</option>
                     <option value="2">Programozás</option>
-                    <option value="3">pelda3</option>
-                    <option value="4">pelda4</option>
-                    <option value="5">pelda5</option>
-                    <option value="6">pelda6</option>
-                    <option value="7">pelda7</option>
-                    <option value="8">pelda8</option>
+                    <option value="3">Rendszerfejlesztés</option>
+                    <option value="4">Diszkrét Matematika</option>
+                    <option value="5">SOP</option>
+                    <option value="6">Algoritmusok</option>
+                    <option value="7">Bibliaismeret</option>
+                    <option value="8">Testnevelés</option>
                 </select>
 
                 <input type="submit" value="Hozzáadás" id="hozzaadas" name="hozzaadas">
