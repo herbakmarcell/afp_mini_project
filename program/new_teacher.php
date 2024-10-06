@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,53 @@
     <link rel="stylesheet" href="new_teacher.css">
     <title>Új Tanár Felvétele</title>
 </head>
+
+<?php
+require_once './database.php';
+require_once './functions.php';
+$hibak = [];
+
+if($_SERVER['REQUEST_METHOD'] === 'POST')
+{
+    session_start();
+    if(isset($_SESSION['user_id']))
+    {
+        $vezeteknev_helyes = check_data("vezeteknev|nem_ures");
+        if($vezeteknev_helyes)
+        {
+            $vezeteknev = tisztit($_POST["vezeteknev"]);
+        }
+        else 
+            $hibak[] = "A vezetéknév nem megfelelő!";
+
+        $keresztnev_helyes = check_data("keresztnev|nem_ures");
+        if($keresztnev_helyes)
+        {
+            $keresztnev = tisztit($_POST["keresztnev"]);
+        }
+        else 
+            $hibak[] = "A keresztnév nem megfelelő";
+        
+
+        $tantargyak = ['példa1','példa2','példa3','példa4','példa5','példa6', 'példa7', 'példa8'];
+        $tantargy_helyes = check_data("tantargyak|nem_ures");
+        if($tantargy_helyes)
+        {
+            $tantargy_index = tisztit($_POST["tantargyak"]);
+            $tartott_targy = $tantargyak[$tantargy_index];
+        }
+
+
+
+
+    }
+    else {
+        $hibak[] = "Új tanár hozzáadásához először be kell jelentkeznie!";
+    }
+}
+?>
+
+
 <body>
     <nav>
         <p class="title"><a href="index.php">Tanár értékelő</a></p>
@@ -38,18 +85,21 @@
                 
                 <label for="tantargyak">Tantárgyak:</label>
                 <select id="tantargyak" name="tantargyak" required multiple size="6">
-                    <option value="1">pelda1</option>
-                    <option value="2">pelda2</option>
-                    <option value="3">pelda3</option>
-                    <option value="4">pelda4</option>
-                    <option value="5">pelda5</option>
-                    <option value="6">pelda6</option>
-                    <option value="7">pelda7</option>
-                    <option value="8">pelda8</option>
+                    <option value="0">pelda1</option>
+                    <option value="1">pelda2</option>
+                    <option value="2">pelda3</option>
+                    <option value="3">pelda4</option>
+                    <option value="4">pelda5</option>
+                    <option value="5">pelda6</option>
+                    <option value="6">pelda7</option>
+                    <option value="7">pelda8</option>
                 </select>
 
                 <input type="submit" value="Hozzáadás" id="hozzaadas" name="hozzaadas">
             </form>
+            <?php foreach($hibak as $hiba): ?>
+                <p><?=$hiba?></p>
+            <?php endforeach; ?>
         </div>
     </div>
     
