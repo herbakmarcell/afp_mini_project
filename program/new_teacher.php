@@ -15,7 +15,7 @@
 require_once './database.php';
 require_once './functions.php';
 $hibak = [];
-
+$jo_adatok = 0;
 if($_SERVER['REQUEST_METHOD'] === 'POST')
 {
     session_start();
@@ -25,6 +25,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         if($vezeteknev_helyes)
         {
             $vezeteknev = tisztit($_POST["vezeteknev"]);
+            $jo_adatok++;
         }
         else 
             $hibak[] = "A vezetéknév nem megfelelő!";
@@ -33,20 +34,68 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
         if($keresztnev_helyes)
         {
             $keresztnev = tisztit($_POST["keresztnev"]);
+            $jo_adatok++;
         }
         else 
             $hibak[] = "A keresztnév nem megfelelő";
         
 
-        $tantargyak = ['példa1','példa2','példa3','példa4','példa5','példa6', 'példa7', 'példa8'];
+        $tantargyak = ['Blank','Kalkulus','Programozás','példa3','példa4','példa5','példa6', 'példa7', 'példa8'];
         $tantargy_helyes = check_data("tantargyak|nem_ures");
         if($tantargy_helyes)
         {
             $tantargy_index = tisztit($_POST["tantargyak"]);
             $tartott_targy = $tantargyak[$tantargy_index];
+            $jo_adatok++;
+
+        }
+        else {
+            $hibak[] = "A tárgy nem megfelelő!";
         }
 
+        //Tanár lekérdezése az adatb-ből, hogy szerepel-e már 
+        
+        if($jo_adatok == 3)
+        {
+            
+            $sql = "select * from tanarok where vezeteknev='$vezeteknev' and keresztnev='$keresztnev'";
+            $query = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($query) == 0)
+            {
+                //Tanár felvétele a rendszerbe
+                $tanar_sql = "insert into tanarok (vezeteknev, keresztnev) values ('$vezeteknev', '$keresztnev')";
+                $tanar_insert = mysqli_query($conn,$tanar_sql);
 
+
+                //Tanár id meghatározása a kapcsolótlába
+                $tanar_id_sql = "select max(id) from tanarok;";
+                $tanar_id_query = mysqli_query($conn, $tanar_id_sql);
+                if(mysqli_num_rows($tanar_id_query) > 0)
+                {
+                    $id_row = mysqli_fetch_array($tanar_id_query);
+                    $tanar_id = $id_row[0];
+                    
+                }
+
+                //Tantárgy id meghatározása a kapcsolótáblába
+                $tantargy_id_sql = "select id from tantargyak where nev='$tartott_targy';";
+                $tantargy_id_query = mysqli_query($conn,$tantargy_id_sql);
+                if(mysqli_num_rows($tantargy_id_query) > 0)
+                {
+                    $id_row = mysqli_fetch_array($tantargy_id_query);
+                    $tantargy_id = $id_row[0];
+                }
+
+                //Adatok felvétele a kapcsolótáblába
+                $kapcsolo_sql = "insert into tantargykapcsolotabla (tanar_id,tantargy_id) values ('$tanar_id', '$tantargy_id');";
+                $kapcsolo_query = mysqli_query($conn,$kapcsolo_sql);
+                header("Location: ./index.php");
+
+            }
+            else {
+                $hibak[] = "Már van ilyen oktató a rendszerben!";
+            }
+        }
 
 
     }
@@ -85,14 +134,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                 
                 <label for="tantargyak">Tantárgyak:</label>
                 <select id="tantargyak" name="tantargyak" required multiple size="6">
-                    <option value="0">pelda1</option>
-                    <option value="1">pelda2</option>
-                    <option value="2">pelda3</option>
-                    <option value="3">pelda4</option>
-                    <option value="4">pelda5</option>
-                    <option value="5">pelda6</option>
-                    <option value="6">pelda7</option>
-                    <option value="7">pelda8</option>
+                    <option value="1">Kalkulus</option>
+                    <option value="2">Programozás</option>
+                    <option value="3">pelda3</option>
+                    <option value="4">pelda4</option>
+                    <option value="5">pelda5</option>
+                    <option value="6">pelda6</option>
+                    <option value="7">pelda7</option>
+                    <option value="8">pelda8</option>
                 </select>
 
                 <input type="submit" value="Hozzáadás" id="hozzaadas" name="hozzaadas">
