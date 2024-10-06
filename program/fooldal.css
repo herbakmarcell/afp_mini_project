@@ -182,6 +182,7 @@ main
     background-color: var(--vilagoskek);
     box-shadow: 16px 11px 9px var(--sotetkek);
     border:5px solid var(--vilagoskek);
+    height: 100%;
 }
 
 .tanarPictureDiv
