@@ -80,6 +80,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                 //Tantárgy id meghatározása a kapcsolótáblába
                 $tantargy_id_sql = "select id from tantargyak where nev='$tartott_targy';";
                 $tantargy_id_query = mysqli_query($conn,$tantargy_id_sql);
+                
                 if(mysqli_num_rows($tantargy_id_query) > 0)
                 {
                     $id_row = mysqli_fetch_array($tantargy_id_query);
@@ -133,7 +134,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                 <input type="text" id="keresztnev" name="keresztnev" required>
                 
                 <label for="tantargyak">Tantárgyak:</label>
-                <select id="tantargyak" name="tantargyak" required multiple size="6">
+                <select id="tantargyak" name="tantargyak" required size="6">
                     <option value="1">Kalkulus</option>
                     <option value="2">Programozás</option>
                     <option value="3">Rendszerfejlesztés</option>
