@@ -186,6 +186,14 @@ main
     background-color: var(--sotetkek);
     border: 1px solid var(--kek);
 }
+form .khiba{
+    background-color: #f0f8ff;
+    width: 100%;
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 15px;
+    color: red;
+}
 /* komment vége */
 @media (max-width: 1040px){
     main{

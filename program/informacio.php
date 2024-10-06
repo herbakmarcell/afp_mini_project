@@ -109,7 +109,7 @@ if(isset($_SESSION['user_id'])){
     }
     
 }else{
-    $kommentRegisztracio = "A kommenteléshez be kell jelentkezni.";
+    $kommentRegisztracio = "<p class=\"khiba\">A kommenteléshez be kell jelentkezni.</p>";
         
 }
 
