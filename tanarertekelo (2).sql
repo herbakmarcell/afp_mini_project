@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Okt 04. 18:07
+-- Létrehozás ideje: 2024. Okt 06. 09:12
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -39,8 +39,10 @@ CREATE TABLE `ertekelesek` (
 --
 
 INSERT INTO `ertekelesek` (`id`, `felhasznalo_id`, `tanar_id`, `ertekeles`) VALUES
-(1, 2, 1, 4),
-(2, 2, 2, 5);
+(4, 3, 2, 3),
+(5, 3, 1, 5),
+(6, 2, 2, 4),
+(7, 2, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -60,7 +62,8 @@ CREATE TABLE `felhasznalok` (
 --
 
 INSERT INTO `felhasznalok` (`id`, `nev`, `email`, `jelszo`) VALUES
-(2, 'pisti', 'pisti@gmail.com', 'e10adc3949ba59abbe56e057f20f883e');
+(2, 'pisti', 'pisti@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
+(3, 'sanyi213', 'sanyi@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b');
 
 -- --------------------------------------------------------
 
@@ -72,16 +75,22 @@ CREATE TABLE `kommentek` (
   `id` int(11) NOT NULL,
   `felhasznalo_id` int(11) NOT NULL,
   `tanar_id` int(11) NOT NULL,
-  `komment` varchar(255) NOT NULL
+  `komment` text NOT NULL,
+  `ido` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `kommentek`
 --
 
-INSERT INTO `kommentek` (`id`, `felhasznalo_id`, `tanar_id`, `komment`) VALUES
-(1, 2, 2, 'Nagyon jól magyaráz, érdekes órákat tart.'),
-(2, 2, 1, 'Nagyon jól magyaráz, érdekes órákat tart.');
+INSERT INTO `kommentek` (`id`, `felhasznalo_id`, `tanar_id`, `komment`, `ido`) VALUES
+(66, 2, 1, 'Nagyon jól magyaráz', '2024-10-05 00:00:00'),
+(70, 2, 1, 'Nagyon jól magyaráz', '2024-10-05 00:00:00'),
+(71, 2, 1, 'Nagyon jól magyaráz', '2024-10-05 12:43:28'),
+(72, 2, 2, 'Nagyon jól magyaráz', '2024-10-05 12:43:50'),
+(73, 2, 1, 'Nagyon jól magyaráz', '2024-10-05 12:44:57'),
+(74, 3, 2, 'Nagyon jól magyaráz', '2024-10-05 01:11:03'),
+(76, 3, 1, 'Nagyon jól magyaráz', '2024-10-05 01:11:55');
 
 -- --------------------------------------------------------
 
@@ -101,8 +110,8 @@ CREATE TABLE `tanarok` (
 --
 
 INSERT INTO `tanarok` (`id`, `vezeteknev`, `keresztnev`, `atlag`) VALUES
-(1, 'Nagy', 'Károly', 3),
-(2, 'Kovásznai', 'Gergely', 5);
+(1, 'Nagy', 'Károly', 4.5),
+(2, 'Kovásznai', 'Gergely', 3.5);
 
 -- --------------------------------------------------------
 
@@ -165,9 +174,9 @@ ALTER TABLE `felhasznalok`
 -- A tábla indexei `kommentek`
 --
 ALTER TABLE `kommentek`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `felhasznalo_id` (`felhasznalo_id`,`tanar_id`),
-  ADD KEY `tanar_id` (`tanar_id`);
+  ADD PRIMARY KEY (`id`) USING BTREE,
+  ADD KEY `felhasznalo_id` (`felhasznalo_id`,`tanar_id`) USING BTREE,
+  ADD KEY `tanar_id` (`tanar_id`) USING BTREE;
 
 --
 -- A tábla indexei `tanarok`
@@ -197,19 +206,19 @@ ALTER TABLE `tantargykapcsolotabla`
 -- AUTO_INCREMENT a táblához `ertekelesek`
 --
 ALTER TABLE `ertekelesek`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT a táblához `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT a táblához `kommentek`
 --
 ALTER TABLE `kommentek`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT a táblához `tanarok`
@@ -244,8 +253,8 @@ ALTER TABLE `ertekelesek`
 -- Megkötések a táblához `kommentek`
 --
 ALTER TABLE `kommentek`
-  ADD CONSTRAINT `kommentek_ibfk_1` FOREIGN KEY (`felhasznalo_id`) REFERENCES `felhasznalok` (`id`),
-  ADD CONSTRAINT `kommentek_ibfk_2` FOREIGN KEY (`tanar_id`) REFERENCES `tanarok` (`id`);
+  ADD CONSTRAINT `kommentek_ibfk_1` FOREIGN KEY (`felhasznalo_id`) REFERENCES `felhasznalok` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `kommentek_ibfk_2` FOREIGN KEY (`tanar_id`) REFERENCES `tanarok` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Megkötések a táblához `tantargykapcsolotabla`
