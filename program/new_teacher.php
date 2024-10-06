@@ -40,12 +40,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
             $hibak[] = "A keresztnév nem megfelelő";
         
 
-        $tantargyak = ['Blank','Kalkulus','Programozás','Rendszerfejlesztés','Diszkrét Matematika','SOP','Algoritmusok', 'Bibliaismeret', 'Testnevelés'];
         $tantargy_helyes = check_data("tantargyak|nem_ures");
         if($tantargy_helyes)
         {
-            $tantargy_index = tisztit($_POST["tantargyak"]);
-            $tartott_targy = $tantargyak[$tantargy_index];
+            $tantargy_id = tisztit($_POST["tantargyak"]);
             $jo_adatok++;
 
         }
@@ -105,6 +103,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
     }
 }
 ?>
+<?php 
+    //A tárgyak lekérdezése az adatbázisból
+    $adatb_targyak_sql = "select id,nev from tantargyak;";
+    $adatb_targyak_query = mysqli_query($conn,$adatb_targyak_sql);
+    $adatb_targyak_lekerdezes_sikeres = false;
+    if(mysqli_num_rows($adatb_targyak_query)>0)
+        $adatb_targyak_lekerdezes_sikeres = true;
+
+?>
+
 
 
 <body>
@@ -135,14 +143,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                 
                 <label for="tantargyak">Tantárgyak:</label>
                 <select id="tantargyak" name="tantargyak" required size="6">
-                    <option value="1">Kalkulus</option>
-                    <option value="2">Programozás</option>
-                    <option value="3">Rendszerfejlesztés</option>
-                    <option value="4">Diszkrét Matematika</option>
-                    <option value="5">SOP</option>
-                    <option value="6">Algoritmusok</option>
-                    <option value="7">Bibliaismeret</option>
-                    <option value="8">Testnevelés</option>
+
+                    <?php if($adatb_targyak_lekerdezes_sikeres): ?>
+                        <?php while($sor = mysqli_fetch_assoc($adatb_targyak_query)): ?>
+                            <option value="<?=$sor['id']?>"><?=$sor['nev']?></option>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+
                 </select>
 
                 <input type="submit" value="Hozzáadás" id="hozzaadas" name="hozzaadas">
