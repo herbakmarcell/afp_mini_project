@@ -13,6 +13,7 @@
 | T5 | Főoldal, keresés mező | A keresés a megadott kritériumoknak megfelelően a felhasználó tud keresni egy adott tanárra vagy tanárokra | Sikeresen működik a kritériumokkal való szűrés | Nem találtam problémát|
 | T6 | Főoldal, tanárok megjelenítése | A főoldalon megjelenik az összes tanár | Sikeresen megjelenik az összes tanár a főoldalon | Nem találtam problémát |
 | T7 | Főoldal, footer | Az oldal alján található a footer amin átirányítások találhatók | Sikeresen irányítja át a felhasználót az oldal | Nem találtam problémát |
-| T8 | Információ egy adott tanárról | A felhasználó ha rákattint egy tanárra akkor a tanárnak az adatai és kommentjei jelennek meg | Sikeresen jelenik meg a tanár adatai és a komment szekció | Nem találtam problémát |
-| T9 | Információ egy adott tanárról | A felhasználó csak akkor tud értékelni egy tanárt ha be van jelentkezve | Sikeresen működik az értékelés a bejelentkezett felhasználók esetében | Nem találtam problémát |
-| T10 | Kommentszekció | A felhasználó ha bejelentkezett akkor tud kommentelni | Sikeresen működik a funkció, csak akkor tud kommentelni a felhasználó, ha be van jelentkezve. | Nem találtam problémát |
+| T8 | Új tanár felvitele | A bejelentkezett felhasználó új tanárt tud felvinni az adatbázisba a megadott tantárgyak alapján | Sikeren működik az új tanár felvitele és hozzárendelése a tantárgyhoz | Nem találtam problémát| 
+| T9 | Információ egy adott tanárról | A felhasználó ha rákattint egy tanárra akkor a tanárnak az adatai és kommentjei jelennek meg | Sikeresen jelenik meg a tanár adatai és a komment szekció | Nem találtam problémát |
+| T10 | Információ egy adott tanárról | A felhasználó csak akkor tud értékelni egy tanárt ha be van jelentkezve | Sikeresen működik az értékelés a bejelentkezett felhasználók esetében | Nem találtam problémát |
+| T11 | Kommentszekció | A felhasználó ha bejelentkezett akkor tud kommentelni | Sikeresen működik a funkció, csak akkor tud kommentelni a felhasználó, ha be van jelentkezve. | Nem találtam problémát |
